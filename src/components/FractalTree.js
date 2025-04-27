@@ -4,7 +4,7 @@ import "../styles/FractalTree.css";
 
 let angle;
 
-const Sketch = p5 => {
+const Sketch = (p5) => {
   p5.setup = () => {
     p5.createCanvas(400, 400, "transparent");
     angle = p5.PI / 4;

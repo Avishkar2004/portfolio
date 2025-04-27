@@ -29,7 +29,7 @@ class Intro extends React.Component {
         <Typist avgTypingDelay={120}>
           <span className="intro-title">
             {"hi, "}
-            <span className="intro-name">{"Avi"}</span>
+            <span className="intro-name">{"Avishkar"}</span>
             {" here."}
           </span>
         </Typist>
