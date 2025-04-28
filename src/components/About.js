@@ -19,7 +19,7 @@ class About extends React.Component {
   render() {
     const one = (
       <p>
-        I am currently a <b>Full Stack Developer</b> at{" "}
+        I am currently a <b>Full Stack Developer (Intern)</b> at{" "}
         <a href="https://techstarsolution-77061.web.app/">
           Techstar Solution Pvt Ltd
         </a>
