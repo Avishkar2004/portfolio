@@ -45,6 +45,14 @@ class Projects extends React.Component {
         link: "https://github.com/Avishkar2004/scapeflow",
         open: "",
       },
+      Greenyogagro: {
+        desc:
+          "A comprehensive website for a green yoga and agriculture company built with WordPress. responsive design for seamless experience across all devices.",
+        techStack:
+          "WordPress, WooCommerce, PHP, MySQL, HTML5, CSS3, JavaScript",
+        link: "https://greenyogagro.com/",
+        open: "https://greenyogagro.com/",
+      },
     };
 
     return (
