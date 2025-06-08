@@ -35,7 +35,7 @@ class Projects extends React.Component {
         techStack:
           "JavaScript, Node.js, Express.js, MongoDB, React, Tailwind CSS",
         link: "https://github.com/Avishkar2004/deploy_Facilink",
-        open: "https://facilink.in/",
+        open: "https://facilink.in",
       },
       Scrapie: {
         desc:
@@ -43,15 +43,15 @@ class Projects extends React.Component {
         techStack:
           "TypeScript, Next.js, Clerk, Generative AI, Prisma, React Query",
         link: "https://github.com/Avishkar2004/scapeflow",
-        open: "",
+        open: "https://scrapie-green.vercel.app",
       },
       Greenyogagro: {
         desc:
           "A comprehensive website for a green yoga and agriculture company built with WordPress. responsive design for seamless experience across all devices.",
         techStack:
           "WordPress, WooCommerce, PHP, MySQL, HTML5, CSS3, JavaScript",
-        link: "https://greenyogagro.com/",
-        open: "https://greenyogagro.com/",
+        link: "https://greenyogagro.com",
+        open: "https://greenyogagro.com",
       },
     };
 

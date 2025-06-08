@@ -8,17 +8,21 @@ import NavBar from "./components/NavBar";
 import "./App.css";
 import "./styles/Global.css";
 import "rsuite/dist/styles/rsuite-default.css";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
+      {/* Vercel Analytics Tracking */}
+      <Analytics />
+
+      <NavBar />
       <div id="content">
-        <Intro></Intro>
-        <About></About>
-        <Experience></Experience>
-        <Projects></Projects>
-        <Credits></Credits>
+        <Intro />
+        <About />
+        <Experience />
+        <Projects />
+        <Credits />
       </div>
     </div>
   );
