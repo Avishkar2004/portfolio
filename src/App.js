@@ -9,12 +9,14 @@ import "./App.css";
 import "./styles/Global.css";
 import "rsuite/dist/styles/rsuite-default.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
     <div className="App">
       {/* Vercel Analytics Tracking */}
       <Analytics />
+      <SpeedInsights />
 
       <NavBar />
       <div id="content">
