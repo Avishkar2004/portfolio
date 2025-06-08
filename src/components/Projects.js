@@ -21,14 +21,6 @@ class Projects extends React.Component {
   }
   render() {
     const projects = {
-      "E-Commerce Platform": {
-        desc:
-          "A production-ready full-stack e-commerce application featuring user authentication (JWT), dynamic product browsing, cart management, search functionality, and AI-powered reviews integrated with Gemini AI.",
-        techStack:
-          "React, Tailwind CSS, Socket.io, Node.js, Express.js, MySQL, Redis, Docker, Google OAuth, GitHub OAuth, Gemini AI",
-        link: "https://github.com/Avishkar2004/Agriculture_website",
-        open: "",
-      },
       Facilink: {
         desc:
           "A full-stack real-time communication platform designed for task management, team collaboration, and instant messaging with notification support.",
@@ -48,10 +40,17 @@ class Projects extends React.Component {
       Greenyogagro: {
         desc:
           "A comprehensive website for a green yoga and agriculture company built with WordPress. responsive design for seamless experience across all devices.",
-        techStack:
-          "WordPress, WooCommerce, PHP, MySQL, HTML5, CSS3, JavaScript",
+        techStack: "WordPress, PHP, MySQL, HTML5, CSS3, JavaScript",
         link: "https://greenyogagro.com",
         open: "https://greenyogagro.com",
+      },
+      "E-Commerce Platform": {
+        desc:
+          "A production-ready full-stack e-commerce application featuring user authentication (JWT), dynamic product browsing, cart management, search functionality, and AI-powered reviews integrated with Gemini AI.",
+        techStack:
+          "React, Tailwind CSS, Socket.io, Node.js, Express.js, MySQL, Redis, Docker, Google OAuth, GitHub OAuth, Gemini AI",
+        link: "https://github.com/Avishkar2004/Agriculture_website",
+        open: "",
       },
     };
 
