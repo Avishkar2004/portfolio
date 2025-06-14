@@ -21,32 +21,44 @@ class Projects extends React.Component {
   }
   render() {
     const projects = {
-      Facilink: {
+      Hydrorich: {
         desc:
-          "A full-stack real-time communication platform designed for task management, team collaboration, and instant messaging with notification support.",
+          "An intelligent agriculture support system with real-time messaging, AI-driven responses, secure auth, and fully containerized deployment.",
         techStack:
-          "JavaScript, Node.js, Express.js, MongoDB, React, Tailwind CSS",
-        link: "https://github.com/Avishkar2004/deploy_Facilink",
-        open: "https://facilink.in",
+          "React, TypeScript, JavaScript, Zustand, Tailwind CSS, Chart.js, Node.js, Express.js, Socket.IO, Redis, Docker, Google Gen AI",
+        link: {
+          frontend: "https://github.com/Avishkar2004/Hydrorich-client",
+          backend: "https://github.com/Avishkar2004/Hydrorich-server",
+        },
+        open: "https://hydrorich-client.vercel.app/",
       },
       Scrapie: {
         desc:
-          "A modern SaaS platform built with Next.js and AI integration, enabling users to generate, organize, and manage creative workflows powered by generative AI.",
+          "A modern SaaS platform using Next.js and AI to generate, organize, and manage creative workflows with authentication and state management.",
         techStack:
           "TypeScript, Next.js, Clerk, Generative AI, Prisma, React Query",
         link: "https://github.com/Avishkar2004/scapeflow",
         open: "https://scrapie-green.vercel.app",
       },
+      Facilink: {
+        desc:
+          "A full-stack real-time communication platform for task management, team collaboration, and instant messaging with notifications.",
+        techStack:
+          "JavaScript, Node.js, Express.js, MongoDB, React, Tailwind CSS",
+        link: "https://github.com/Avishkar2004/deploy_Facilink",
+        open: "https://facilink.in",
+      },
       Greenyogagro: {
         desc:
-          "A comprehensive website for a green yoga and agriculture company built with WordPress. responsive design for seamless experience across all devices.",
+          "A responsive website for a green yoga and agriculture brand, designed for seamless performance across devices using WordPress.",
         techStack: "WordPress, PHP, MySQL, HTML5, CSS3, JavaScript",
         link: "https://greenyogagro.com",
         open: "https://greenyogagro.com",
       },
+
       "E-Commerce Platform": {
         desc:
-          "A production-ready full-stack e-commerce application featuring user authentication (JWT), dynamic product browsing, cart management, search functionality, and AI-powered reviews integrated with Gemini AI.",
+          "A full-stack e-commerce app with JWT auth, real-time cart, AI-powered product reviews, and robust backend features.",
         techStack:
           "React, Tailwind CSS, Socket.io, Node.js, Express.js, MySQL, Redis, Docker, Google OAuth, GitHub OAuth, Gemini AI",
         link: "https://github.com/Avishkar2004/Agriculture_website",
