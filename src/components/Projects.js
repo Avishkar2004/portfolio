@@ -40,6 +40,14 @@ class Projects extends React.Component {
         link: "https://github.com/Avishkar2004/scapeflow",
         open: "https://scrapie-green.vercel.app",
       },
+      "Artistly.com": {
+        desc:
+          "Modern platform for booking performing artists. Built with Next.js, React, and Tailwind CSS. Demo uses mock data. Not real-time.",
+        techStack:
+          "Next.js 14, TypeScript, Tailwind CSS, ShadCN, Radix UI, React Hook Form, Yup, Lucide React, Vercel",
+        link: "https://github.com/Avishkar2004/Artistly",
+        open: "https://artistly-lime.vercel.app/",
+      },
       Facilink: {
         desc:
           "A full-stack real-time communication platform for task management, team collaboration, and instant messaging with notifications.",
