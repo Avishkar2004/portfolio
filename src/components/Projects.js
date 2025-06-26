@@ -40,6 +40,14 @@ class Projects extends React.Component {
         link: "https://github.com/Avishkar2004/scapeflow",
         open: "https://scrapie-green.vercel.app",
       },
+      Whiteboard: {
+        desc:
+          "A real-time collaborative whiteboard application built with React, Node.js, Express, MongoDB, Redis, and Socket.IO. This project allows users to register, log in, create and share whiteboards, and collaborate in real time.",
+        techStack:
+          "React, Vite, Zustand, TailwindCSS, Axios, Socket.IO-client, Node.js, Express, MongoDB (Mongoose), Redis, Socket.IO Vercel (client & server), MongoDB Atlas, Redis Cloud",
+        link: "https://github.com/Avishkar2004/Whiteboard-Collaborate-Create",
+        open: "https://whiteboard-collaborate-create.vercel.app/",
+      },
       "Artistly.com": {
         desc:
           "Modern platform for booking performing artists. Built with Next.js, React, and Tailwind CSS. Demo uses mock data. Not real-time.",
