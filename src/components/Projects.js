@@ -21,6 +21,13 @@ class Projects extends React.Component {
   }
   render() {
     const projects = {
+      YesITryMe: {
+        desc:
+          "A full-stack MLM & e-commerce platform (Jan–Jun 2025) with 120-level commission distribution, real-time analytics dashboard, automated wallets, KYC workflows, and secure payment validation. Optimized MongoDB performance by 70% with indexing and delivered end-to-end SaaS solution.",
+        techStack:
+          "React.js, Node.js, Express.js, MongoDB, Tailwind CSS, Chart.js, JWT, Cloudinary, Twilio, Nodemailer, Vercel, MongoDB Atlas",
+        open: "https://www.yesitryme.com",
+      },
       Hydrorich: {
         desc:
           "An intelligent agriculture support system with real-time messaging, AI-driven responses, secure auth, and fully containerized deployment.",

@@ -84,12 +84,12 @@ const JobList = () => {
   const experienceItems = {
     "Techstar Solution Pvt Ltd": {
       jobTitle: "Full Stack Developer Intern @",
-      duration: "JAN 2025 - PRESENT",
+      duration: "JAN 2025 - JUN 2025",
       desc: [
-        "Contributed to the design and development of scalable web applications using React.js, Node.js, and MySQL.",
+        "Contributed to the design and development of scalable web applications using React, Tailwind CSS, Socket.io, Node.js, Express.js, MySQL, Redis, Docker, Google OAuth, GitHub OAuth, and Gemini AI and Vercel.",
         "Collaborated with the backend team to build RESTful APIs following MVC architecture and integrated third-party services like Cloudinary and AWS.",
         "Optimized frontend components for performance and responsiveness across different devices using Tailwind CSS and Framer Motion.",
-        "Participated actively in daily stand-ups, sprint planning, and code reviews to ensure high-quality deliverables and continuous improvement.",
+        "Participated actively in daily stand-ups, sprint planning, and code reviews to ensure high-quality deliverables and continuous improvement. ",
       ],
     },
   };

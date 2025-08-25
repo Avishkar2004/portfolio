@@ -19,12 +19,13 @@ class About extends React.Component {
   render() {
     const one = (
       <p>
-        I am currently a <b>Full Stack Developer (Intern)</b> at{" "}
+        I worked as a <b>Full Stack Developer (Intern)</b> at{" "}
         <a href="https://techstarsolution-77061.web.app/">
           Techstar Solution Pvt Ltd
-        </a>
-        . I have recently completed my <b>Bachelor of Science</b> in{" "}
-        <b>Computer Science</b> from
+        </a>{" "}
+        from <b>Jan 2025</b> to <b>Jun 2025</b>. I have recently completed my
+        <b> Bachelor of Science</b> in <b>Computer Science</b> at
+        <a href="https://www.indraraj.in/"> Indraraj College, Sillod</a> under
         <a href="https://bamu.ac.in/">
           {" "}
           Dr. Babasaheb Ambedkar Marathwada University (BAMU)
@@ -39,7 +40,46 @@ class About extends React.Component {
       </p>
     );
 
-    const tech_stack = ["Typescript", "React.js", "Javascript ES6+"];
+    const tech_stack = [
+      // Core Languages & Fundamentals
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "DSA",
+      "System Design",
+
+      // Frontend
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Chart.js",
+
+      // Backend
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Socket.io",
+      "JWT Auth",
+
+      // Databases
+      "MongoDB",
+      "MySQL",
+      "Prisma ORM",
+      "Redis",
+      "MongoDB Atlas",
+
+      // DevOps & Deployment
+      "Git & GitHub",
+      "Docker",
+      "Vercel",
+
+      // Cloud & Tools
+      "Cloudinary",
+      "Nodemailer",
+
+      // AI & Emerging Tech
+      "Gemini AI",
+    ];
 
     return (
       <div id="about">
