@@ -17,22 +17,27 @@ class ExternalLinks extends React.Component {
     });
   }
   render() {
+    const isValidUrl = (url) => typeof url === "string" && url.trim().length > 0;
+    const hasGithub = isValidUrl(this.props.githubLink);
+    const hasOpen = isValidUrl(this.props.openLink);
     return (
       <span className="external-links">
-        <a
-          className="github-icon"
-          href={this.props.githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GitHubIcon
-            style={{
-              fontSize: 20,
-              color: "var(--lightest-slate)",
-            }}
-          ></GitHubIcon>
-        </a>
-        {this.props.openLink && (
+        {hasGithub && (
+          <a
+            className="github-icon"
+            href={this.props.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon
+              style={{
+                fontSize: 20,
+                color: "var(--lightest-slate)",
+              }}
+            ></GitHubIcon>
+          </a>
+        )}
+        {hasOpen && (
           <a
             className="open-icon"
             href={this.props.openLink}

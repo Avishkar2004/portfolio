@@ -26,57 +26,63 @@ class Projects extends React.Component {
           "A full-stack MLM & e-commerce platform (Jan–Jun 2025) with 120-level commission distribution, real-time analytics dashboard, automated wallets, KYC workflows, and secure payment validation. Optimized MongoDB performance by 70% with indexing and delivered end-to-end SaaS solution.",
         techStack:
           "React.js, Node.js, Express.js, MongoDB, Tailwind CSS, Chart.js, JWT, Cloudinary, Twilio, Nodemailer, Vercel, MongoDB Atlas",
-        open: "https://www.yesitryme.com",
+        domain: "https://www.yesitryme.com",
       },
-      Hydrorich: {
+      "Chatbot AI": {
         desc:
-          "An intelligent agriculture support system with real-time messaging, AI-driven responses, secure auth, and fully containerized deployment.",
+          "Production-ready multi-project AI chatbot with secure JWT auth, Redis caching & rate limits, and robust Groq LLM integration for fast, reliable chat.",
         techStack:
-          "React, TypeScript, JavaScript, Zustand, Tailwind CSS, Chart.js, Node.js, Express.js, Socket.IO, Redis, Docker, Google Gen AI",
-        link: {
-          frontend: "https://github.com/Avishkar2004/Hydrorich-client",
-          backend: "https://github.com/Avishkar2004/Hydrorich-server",
-        },
-        open: "https://hydrorich-client.vercel.app/",
+          "React 18, React Router, Context API, Tailwind CSS, Axios, Framer Motion, GSAP, Node.js, Express 5, MongoDB, MongoDB Atlas (Cloud), Mongoose, Redis (Cloud), JWT, express-validator, express-rate-limit, CORS, morgan, Groq SDK, Vercel",
+        GithubRepository: "https://github.com/Avishkar2004/Chatbot-AI",
+        domain: "https://chat-bot-ai-v6fl.vercel.app/",
       },
+      // Hydrorich: {
+      //   desc:
+      //     "An intelligent agriculture support system with real-time messaging, AI-driven responses, secure auth, and fully containerized deployment.",
+      //   techStack:
+      //     "React, TypeScript, JavaScript, Zustand, Tailwind CSS, Chart.js, Node.js, Express.js, Socket.IO, Redis, Docker, Google Gen AI",
+      //   GithubRepository: {},
+      //   domain: "https://hydrorich-client.vercel.app/",
+      // },
       Scrapie: {
         desc:
           "A modern SaaS platform using Next.js and AI to generate, organize, and manage creative workflows with authentication and state management.",
         techStack:
           "TypeScript, Next.js, Clerk, Generative AI, Prisma, React Query",
-        link: "https://github.com/Avishkar2004/scapeflow",
-        open: "https://scrapie-green.vercel.app",
+        GithubRepository: "https://github.com/Avishkar2004/scapeflow",
+        domain: "https://scrapie-green.vercel.app",
       },
       Whiteboard: {
         desc:
           "A real-time collaborative whiteboard application built with React, Node.js, Express, MongoDB, Redis, and Socket.IO. This project allows users to register, log in, create and share whiteboards, and collaborate in real time.",
         techStack:
           "React, Vite, Zustand, TailwindCSS, Axios, Socket.IO-client, Node.js, Express, MongoDB (Mongoose), Redis, Socket.IO Vercel (client & server), MongoDB Atlas, Redis Cloud",
-        link: "https://github.com/Avishkar2004/Whiteboard-Collaborate-Create",
-        open: "https://whiteboard-collaborate-create.vercel.app/",
+        GithubRepository:
+          "https://github.com/Avishkar2004/Whiteboard-Collaborate-Create",
+        domain: "https://whiteboard-collaborate-create.vercel.app/",
       },
       "Artistly.com": {
         desc:
           "Modern platform for booking performing artists. Built with Next.js, React, and Tailwind CSS. Demo uses mock data. Not real-time.",
         techStack:
           "Next.js 14, TypeScript, Tailwind CSS, ShadCN, Radix UI, React Hook Form, Yup, Lucide React, Vercel",
-        link: "https://github.com/Avishkar2004/Artistly",
-        open: "https://artistly-lime.vercel.app/",
+        GithubRepository: "https://github.com/Avishkar2004/Artistly",
+        domain: "https://artistly-lime.vercel.app/",
       },
       Facilink: {
         desc:
-          "A full-stack real-time communication platform for task management, team collaboration, and instant messaging with notifications.",
+          "Facilink is a basic full-stack website built with React, Node.js, Express, and MongoDB. It’s fully responsive, works smoothly on mobile and desktop. The site runs on facilink.in with a clean UI built using Tailwind CSS.",
         techStack:
-          "JavaScript, Node.js, Express.js, MongoDB, React, Tailwind CSS",
-        link: "https://github.com/Avishkar2004/deploy_Facilink",
-        open: "https://facilink.in",
+          "JavaScript, Node.js, Express.js, MongoDB, MongoDB Atlas (Cloud), React, Tailwind CSS, Vercel",
+        GithubRepository: "https://github.com/Avishkar2004/deploy_Facilink",
+        domain: "https://facilink.in",
       },
       Greenyogagro: {
         desc:
           "A responsive website for a green yoga and agriculture brand, designed for seamless performance across devices using WordPress.",
         techStack: "WordPress, PHP, MySQL, HTML5, CSS3, JavaScript",
-        link: "https://greenyogagro.com",
-        open: "https://greenyogagro.com",
+        GithubRepository: "",
+        domain: "https://greenyogagro.com",
       },
 
       "E-Commerce Platform": {
@@ -84,8 +90,8 @@ class Projects extends React.Component {
           "A full-stack e-commerce app with JWT auth, real-time cart, AI-powered product reviews, and robust backend features.",
         techStack:
           "React, Tailwind CSS, Socket.io, Node.js, Express.js, MySQL, Redis, Docker, Google OAuth, GitHub OAuth, Gemini AI",
-        link: "https://github.com/Avishkar2004/Agriculture_website",
-        open: "",
+        GithubRepository: "https://github.com/Avishkar2004/Agriculture_website",
+        domain: "",
       },
     };
 
@@ -107,8 +113,8 @@ class Projects extends React.Component {
                       ></FolderOpenRoundedIcon>
                     </div>
                     <ExternalLinks
-                      githubLink={projects[key]["link"]}
-                      openLink={projects[key]["open"]}
+                      githubLink={projects[key]["GithubRepository"]}
+                      openLink={projects[key]["domain"]}
                     ></ExternalLinks>
                   </div>
 
