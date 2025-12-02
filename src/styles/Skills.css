@@ -101,7 +101,7 @@
 
 .skill-item {
   background: var(--navy-light);
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 6px;
   font-size: 16px;
   color: var(--slate);
@@ -129,6 +129,14 @@
   transform: translateY(-2px);
   border-color: var(--green-bright);
   box-shadow: 0 5px 15px -5px rgba(100, 255, 218, 0.3);
+}
+
+.skill-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin: 0;
+  font-family: "NTR", sans-serif;
 }
 
 @media only screen and (max-width: 788px) {

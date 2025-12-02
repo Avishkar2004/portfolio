@@ -4,18 +4,22 @@ import "../styles/Skills.css";
 
 export const skills = {
   languages: ["JavaScript", "TypeScript", "Python", "SQL"],
+
   frontend: [
-    "HTML",
-    "CSS",
+    "HTML5",
+    "CSS3",
     "React.js",
     "Next.js",
+    "React Native",
     "Tailwind CSS",
     "Bootstrap",
     "Radix UI",
-    "React Native",
+    "Framer Motion",
     "WordPress",
     "Chart.js",
+    "React Redux",
   ],
+
   backend: [
     "Node.js",
     "Express.js",
@@ -23,18 +27,28 @@ export const skills = {
     "MongoDB",
     "MongoDB Atlas",
     "Redis",
+    "Prisma ORM",
     "REST APIs",
     "Socket.io",
-    "JWT",
+    "JWT Auth",
+    "Kafka",
     "Nodemailer",
     "Twilio",
   ],
-  devOps: ["Docker", "Git", "GitHub", "CI/CD", "Vercel", "OAuth (Google, GitHub)"],
+
+  devOps: [
+    "Docker",
+    "Git",
+    "GitHub",
+    "CI/CD",
+    "Vercel",
+    "OAuth (Google, GitHub)",
+  ],
+
   other: [
     "Zustand",
     "Postman",
     "Clerk",
-    "Prisma",
     "Cloudinary",
     "System Design",
     "LLD",
@@ -53,26 +67,30 @@ const Skills = () => {
         </div>
         <div className="about-content">
           <div className="skills-grid">
-            {Object.entries(skills).map(([category, skillList]) => (
-              <div key={category} className="skill-category">
-                <div className="category-header">
-                  <h3 className="category-title">
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </h3>
-                  <div className="category-icon">
-                    {getCategoryIcon(category)}
-                  </div>
-                </div>
-                <div className="skill-list">
-                  {skillList.map((skill) => (
-                    <div key={skill} className="skill-item">
-                      <span className="skill-icon">{getSkillIcon(skill)}</span>
-                      <span className="skill-name">{skill}</span>
+            {Object.entries(skills).map(([category, skillList]) => {
+              const label =
+                category === "languages"
+                  ? "Languages"
+                  : category === "frontend"
+                  ? "Frontend"
+                  : category === "backend"
+                  ? "Backend"
+                  : category === "devOps"
+                  ? "DevOps & Deployment"
+                  : "Tools & Concepts";
+
+              return (
+                <div key={category} className="skill-category">
+                  <div className="category-header">
+                    <h3 className="category-title">{label}</h3>
+                    <div className="category-icon">
+                      {getCategoryIcon(category)}
                     </div>
-                  ))}
+                  </div>
+                  <p className="skill-text">{skillList.join(", ")}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
@@ -89,52 +107,6 @@ const getCategoryIcon = (category) => {
     other: "🧰",
   };
   return icons[category] || "✨";
-};
-
-const getSkillIcon = (skill) => {
-  const icons = {
-    JavaScript: "📜",
-    TypeScript: "📘",
-    Python: "🐍",
-    HTML: "🌐",
-    CSS: "🎨",
-    SQL: "🗄️",
-    "React.js": "⚛️",
-    "Next.js": "▲",
-    "Tailwind CSS": "🎯",
-    Bootstrap: "🎨",
-    "Radix UI": "🎭",
-    "React Native": "📱",
-    WordPress: "📝",
-    "Chart.js": "📈",
-    "Node.js": "🟢",
-    "Express.js": "🚂",
-    MySQL: "🐬",
-    MongoDB: "🍃",
-    "MongoDB Atlas": "🗺️",
-    Redis: "🔴",
-    "REST APIs": "🔌",
-    "Socket.io": "🔌",
-    JWT: "🔐",
-    Nodemailer: "✉️",
-    Twilio: "📞",
-    Docker: "🐳",
-    Git: "📦",
-    GitHub: "🐙",
-    "CI/CD": "🏁",
-    Vercel: "▲",
-    "System Design": "🏗️",
-    LLD: "🧩",
-    HLD: "🗺️",
-    Zustand: "🧠",
-    Postman: "📮",
-    Clerk: "🪪",
-    Prisma: "🔷",
-    Cloudinary: "☁️",
-    "Data Structures & Algorithms": "📊",
-    "Gemini AI": "🤖",
-  };
-  return icons[skill] || "✨";
 };
 
 export default Skills;

@@ -43,16 +43,28 @@ class About extends React.Component {
     const tech_stack = [
       // Core Languages & Fundamentals
       "JavaScript (ES6+)",
+      "TypeScript",
+      "Python",
+      "SQL",  
       "HTML5",
       "CSS3",
-      "DSA",
-      "System Design",
+      "Data Structures & Algorithms",
+      "System Design (LLD & HLD)",
 
       // Frontend
       "React.js",
       "Next.js",
+      "React Native",
       "Tailwind CSS",
+      "Bootstrap",
+      "Radix UI",
+      "Framer Motion",
       "Chart.js",
+      "WordPress",
+
+      // State Management
+      "React Redux",
+      "Zustand",
 
       // Backend
       "Node.js",
@@ -60,22 +72,28 @@ class About extends React.Component {
       "REST APIs",
       "Socket.io",
       "JWT Auth",
+      "Kafka",
 
       // Databases
       "MongoDB",
+      "MongoDB Atlas",
       "MySQL",
       "Prisma ORM",
       "Redis",
-      "MongoDB Atlas",
 
       // DevOps & Deployment
       "Git & GitHub",
       "Docker",
+      "CI/CD",
       "Vercel",
 
       // Cloud & Tools
       "Cloudinary",
       "Nodemailer",
+      "Twilio",
+      "Postman",
+      "Clerk",
+      "OAuth (Google, GitHub)",
 
       // AI & Emerging Tech
       "Gemini AI",
@@ -91,7 +109,16 @@ class About extends React.Component {
             <div className="about-description">
               {[one]}
               {"Here are some technologies I have been working with:"}
-              <ul className="tech-stack">
+              <ul
+                className="tech-stack"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                  gap: "0.5rem",
+                  listStyle: "none",
+                  paddingLeft: 0,
+                }}
+              >
                 {tech_stack.map(function (tech_item, i) {
                   return (
                     <FadeInSection delay={`${i + 1}00ms`}>
