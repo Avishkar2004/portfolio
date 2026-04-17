@@ -18,11 +18,13 @@ export const skills = {
     "WordPress",
     "Chart.js",
     "React Redux",
+    "Jest",
   ],
 
   backend: [
     "Node.js",
     "Express.js",
+    "GraphQL",
     "MySQL",
     "MongoDB",
     "MongoDB Atlas",
@@ -41,6 +43,7 @@ export const skills = {
     "Git",
     "GitHub",
     "CI/CD",
+    "AWS (EC2, S3, Lambda, IAM)",
     "Vercel",
     "OAuth (Google, GitHub)",
   ],

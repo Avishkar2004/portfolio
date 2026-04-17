@@ -82,6 +82,16 @@ const JobList = () => {
   const [value, setValue] = React.useState(0);
 
   const experienceItems = {
+    "YesITryMe Marketing LLP": {
+      jobTitle: "Full Stack Developer @",
+      duration: "AUG 2025 - PRESENT · Remote",
+      desc: [
+        "Owned end-to-end development of a production platform, translating business requirements into scalable technical solutions and release-ready features.",
+        "Designed core data flows for user onboarding, referral tracking, commissions, and rewards with a strong focus on data integrity and fraud prevention.",
+        "Built internal admin tools and monitoring dashboards to track system health, user activity, and revenue flow, enabling faster operational decisions.",
+        "Handled production deployments, environment configuration, and post-release issue resolution while iterating rapidly based on real user feedback.",
+      ],
+    },
     "Techstar Solution Pvt Ltd": {
       jobTitle: "Full Stack Developer Intern @",
       duration: "JAN 2025 - JUN 2025",
@@ -108,11 +118,15 @@ const JobList = () => {
         className={classes.tabs}
       >
         {Object.keys(experienceItems).map((key, i) => (
-          <Tab label={isHorizontal ? `0${i}.` : key} {...a11yProps(i)} />
+          <Tab
+            key={key}
+            label={isHorizontal ? `0${i}.` : key}
+            {...a11yProps(i)}
+          />
         ))}
       </Tabs>
       {Object.keys(experienceItems).map((key, i) => (
-        <TabPanel value={value} index={i}>
+        <TabPanel key={key} value={value} index={i}>
           <span className="joblist-job-title">
             {experienceItems[key]["jobTitle"] + " "}
           </span>
@@ -123,8 +137,8 @@ const JobList = () => {
           <ul className="job-description">
             {experienceItems[key]["desc"].map(function (descItem, i) {
               return (
-                <FadeInSection delay={`${i + 1}00ms`}>
-                  <li key={i}>{descItem}</li>
+                <FadeInSection key={i} delay={`${i + 1}00ms`}>
+                  <li>{descItem}</li>
                 </FadeInSection>
               );
             })}
