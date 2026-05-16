@@ -1,0 +1,100 @@
+.commits-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  min-height: 100vh;
+}
+
+.commits-back {
+  display: inline-block;
+  font-family: "NTR", sans-serif;
+  font-size: 16px;
+  color: var(--green-bright);
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.commits-back:hover {
+  text-decoration: underline;
+}
+
+.commits-page-header {
+  margin-bottom: 2.5rem;
+}
+
+.commits-page-title {
+  font-family: "NTR", sans-serif;
+  color: var(--lightest-slate);
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0.5rem 0 1rem;
+}
+
+.commits-repo-link {
+  font-family: "NTR", sans-serif;
+  font-size: 16px;
+  color: var(--slate);
+  text-decoration: none;
+}
+
+.commits-repo-link:hover {
+  color: var(--green-bright);
+}
+
+.commits-empty {
+  font-family: "NTR", sans-serif;
+  color: var(--slate);
+  font-size: 18px;
+}
+
+.commits-list-page {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.commits-list-page .commit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--light-navy);
+  border-radius: 12px;
+}
+
+.commits-list-page .commit-item:last-child {
+  margin-bottom: 0;
+}
+
+.commits-list-page .commit-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.commits-list-page .commit-sha {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 14px;
+  color: var(--green-bright);
+}
+
+.commits-list-page .commit-message {
+  font-family: "NTR", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--light-slate);
+}
+
+.commits-list-page .commit-link:hover .commit-message {
+  color: var(--green-bright);
+}
+
+.commits-list-page .commit-date {
+  font-family: "NTR", sans-serif;
+  font-size: 14px;
+  color: var(--slate);
+  opacity: 0.85;
+  padding-left: 0;
+}

@@ -77,6 +77,23 @@ min-height: 50vh;
   font-size: 16px;
 }
 
+.external-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.commits-icon {
+  display: inline-flex;
+  margin-left: 6px;
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+.commits-icon:hover svg {
+  color: var(--green-bright) !important;
+}
+
 /* Spotlight carousel */
 .carousel.slide {
   max-width: 1000px;

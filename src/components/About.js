@@ -45,10 +45,10 @@ class About extends React.Component {
       "JavaScript (ES6+)",
       "TypeScript",
       "Python",
-      "SQL",  
+      "SQL",
       "HTML5",
       "CSS3",
-      "Data Structures & Algorithms",
+      "DSA",
       "System Design (LLD & HLD)",
 
       // Frontend
@@ -85,6 +85,7 @@ class About extends React.Component {
       "Git & GitHub",
       "Docker",
       "CI/CD",
+      "AWS",
       "Vercel",
 
       // Cloud & Tools

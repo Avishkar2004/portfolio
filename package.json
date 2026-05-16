@@ -27,6 +27,8 @@
     "three": "^0.126.1"
   },
   "scripts": {
+    "fetch-commits": "node scripts/fetch-project-commits.js",
+    "prebuild": "npm run fetch-commits",
     "start": "react-scripts start",
     "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
