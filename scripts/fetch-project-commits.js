@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const PER_PAGE = 100;
+const COMMITS_PER_REPO = 5;
 const ROOT = path.join(__dirname, "..");
 const PROJECTS_PATH = path.join(ROOT, "src", "data", "projects.json");
 const OUTPUT_PATH = path.join(ROOT, "src", "data", "project-commits.json");
@@ -43,40 +43,21 @@ function mapCommit(item) {
 
 async function fetchCommits(owner, repo) {
   const headers = getHeaders();
-  const allCommits = [];
-  let page = 1;
+  const params = new URLSearchParams({
+    per_page: String(COMMITS_PER_REPO),
+  });
+  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?${params}`;
+  const response = await fetch(apiUrl, { headers });
 
-  while (true) {
-    const params = new URLSearchParams({
-      per_page: String(PER_PAGE),
-      page: String(page),
-    });
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?${params}`;
-    const response = await fetch(apiUrl, { headers });
-
-    if (!response.ok) {
-      const body = await response.text();
-      throw new Error(
-        `GitHub API ${response.status} for ${owner}/${repo}: ${body.slice(0, 200)}`
-      );
-    }
-
-    const data = await response.json();
-
-    if (!Array.isArray(data) || data.length === 0) {
-      break;
-    }
-
-    allCommits.push(...data.map(mapCommit));
-
-    if (data.length < PER_PAGE) {
-      break;
-    }
-
-    page += 1;
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(
+      `GitHub API ${response.status} for ${owner}/${repo}: ${body.slice(0, 200)}`
+    );
   }
 
-  return allCommits;
+  const data = await response.json();
+  return Array.isArray(data) ? data.map(mapCommit) : [];
 }
 
 async function main() {
