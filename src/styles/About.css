@@ -5,11 +5,19 @@
   padding-top: 100px;
 }
 
-.about-description ul {
+.about-description ul.tech-stack {
   padding-top: 20px;
-  list-style-type: none;
+  padding-left: 0;
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 10px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .about-description ul.tech-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .about-description li {

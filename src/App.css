@@ -1,20 +1,16 @@
-html {
-  scroll-behavior: smooth;
-}
+/* Smooth scrolling is owned by Lenis (see SmoothScroll.js). Native
+   scroll-behavior is intentionally NOT set so the two don't fight.
+   Reduced-motion users get Lenis disabled → instant, accessible jumps. */
 
-/* Animation */
-
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(10vh);
-  visibility: hidden;
-  transition: opacity 0.6s ease-out, transform 1s ease-out;
-  will-change: opacity, visibility;
+html.lenis,
+html.lenis body {
+  height: auto;
 }
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 .App {

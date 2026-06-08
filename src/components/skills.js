@@ -1,5 +1,11 @@
 import React from "react";
-import FadeInSection from "./FadeInSection";
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  staggerContainer,
+  viewportOnce,
+  EASE,
+} from "../animations/variants";
 import "../styles/Skills.css";
 
 export const skills = {
@@ -61,55 +67,53 @@ export const skills = {
   ],
 };
 
-const Skills = () => {
-  return (
-    <FadeInSection>
-      <div id="skills">
-        <div className="section-header">
-          <span className="section-title">/ skills</span>
-        </div>
-        <div className="about-content">
-          <div className="skills-grid">
-            {Object.entries(skills).map(([category, skillList]) => {
-              const label =
-                category === "languages"
-                  ? "Languages"
-                  : category === "frontend"
-                  ? "Frontend"
-                  : category === "backend"
-                  ? "Backend"
-                  : category === "devOps"
-                  ? "DevOps & Deployment"
-                  : "Tools & Concepts";
-
-              return (
-                <div key={category} className="skill-category">
-                  <div className="category-header">
-                    <h3 className="category-title">{label}</h3>
-                    <div className="category-icon">
-                      {getCategoryIcon(category)}
-                    </div>
-                  </div>
-                  <p className="skill-text">{skillList.join(", ")}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </FadeInSection>
-  );
+const META = {
+  languages: { label: "Languages", icon: "💻", level: 0.9 },
+  frontend: { label: "Frontend", icon: "🎨", level: 0.95 },
+  backend: { label: "Backend", icon: "⚙️", level: 0.9 },
+  devOps: { label: "DevOps & Deployment", icon: "🚀", level: 0.8 },
+  other: { label: "Tools & Concepts", icon: "🧰", level: 0.85 },
 };
 
-const getCategoryIcon = (category) => {
-  const icons = {
-    languages: "💻",
-    frontend: "🎨",
-    backend: "⚙️",
-    devOps: "🚀",
-    other: "🧰",
-  };
-  return icons[category] || "✨";
+const Skills = () => {
+  return (
+    <div id="skills">
+      <div className="section-header">
+        <span className="section-title">/ skills</span>
+      </div>
+      <div className="about-content">
+        <motion.div
+          className="skills-grid"
+          variants={staggerContainer(0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
+          {Object.entries(skills).map(([category, skillList]) => {
+            const meta = META[category] || { label: category, icon: "✨", level: 0.8 };
+            return (
+              <motion.div key={category} className="skill-category" variants={fadeUp}>
+                <div className="category-header">
+                  <h3 className="category-title">{meta.label}</h3>
+                  <div className="category-icon">{meta.icon}</div>
+                </div>
+                <p className="skill-text">{skillList.join(", ")}</p>
+                <div className="skill-bar" aria-hidden="true">
+                  <motion.span
+                    className="skill-bar__fill"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: meta.level }}
+                    viewport={viewportOnce}
+                    transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
+                  />
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
 export default Skills;

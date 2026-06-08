@@ -1,35 +1,32 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { EASE, viewportOnce } from "../animations/variants";
 
-export default function FadeInSection(props) {
-  const [isVisible, setVisible] = React.useState(false);
-  const domRef = React.useRef(null);
-  React.useEffect(() => {
-    const el = domRef.current;
-    if (!(el instanceof Element)) return;
+// Parses the legacy delay prop ("100ms", "200ms", 0.3) into seconds.
+function parseDelay(delay) {
+  if (delay == null) return 0;
+  if (typeof delay === "number") return delay;
+  const ms = parseFloat(String(delay));
+  if (Number.isNaN(ms)) return 0;
+  return String(delay).includes("ms") ? ms / 1000 : ms;
+}
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisible(entry.isIntersecting);
-        }
-      });
-    });
-    observer.observe(el);
-    return () => {
-      try {
-        observer.unobserve(el);
-      } finally {
-        observer.disconnect();
-      }
-    };
-  }, []);
+/**
+ * Drop-in replacement for the old IntersectionObserver fade.
+ * Same API (`children`, `delay`) but powered by Framer Motion's whileInView,
+ * so it shares the project's easing + reduced-motion handling and only ever
+ * animates transform/opacity.
+ */
+export default function FadeInSection({ children, delay, className }) {
   return (
-    <div
-      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-      style={{ transitionDelay: `${props.delay}` }}
-      ref={domRef}
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={viewportOnce}
+      transition={{ duration: 0.6, ease: EASE, delay: parseDelay(delay) }}
     >
-      {props.children}
-    </div>
+      {children}
+    </motion.div>
   );
 }
