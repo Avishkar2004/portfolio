@@ -10,11 +10,29 @@
     "GithubRepository": "https://github.com/Avishkar2004/Chatbot-AI",
     "domain": "https://chat-bot-ai-v6fl.vercel.app/"
   },
+  "Eye Tracking Browser Extension": {
+    "desc": "Built a browser extension that enables hands-free scrolling using real-time eye and head movement tracking through the webcam",
+    "techStack": "JavaScript, Chrome Extensions API, Brave Browser, MediaPipe Face Mesh, WebRTC, Computer Vision, HTML, CSS.",
+    "GithubRepository": "https://github.com/Avishkar2004/eye-tracker-scroll-extension",
+    "domain": ""
+  },
+  "InstaAutomation": {
+    "desc": "Automated weather intelligence platform that fetches real-time forecasts from Open-Meteo, generates detailed weather reports, logs historical data, and creates AI-powered weather infographics using GPT-4o-mini and DALL·E 3 for social media and content automation.",
+    "techStack": "Python, Open-Meteo API, OpenAI GPT-4o-mini, DALL·E 3, Requests, Python-Dotenv, REST APIs, Automated Logging, Prompt Engineering, Environment Variables, File Management",
+    "GithubRepository": "https://github.com/Avishkar2004/insta-Automation",
+    "domain": ""
+  },
   "Scrapie": {
     "desc": "A modern SaaS platform using Next.js and AI to generate, organize, and manage creative workflows with authentication and state management.",
     "techStack": "TypeScript, Next.js, Clerk, Generative AI, Prisma, React Query",
     "GithubRepository": "https://github.com/Avishkar2004/scapeflow",
     "domain": "https://scrapie-green.vercel.app"
+  },
+  "TaskManager": {
+    "desc": "Built a full-stack task management application with JWT authentication, protected API routes, task CRUD operations, and MongoDB integration, featuring a responsive UI and secure user-specific access.",
+    "techStack": "Next.js 16, TypeScript, MongoDB, Mongoose, JWT, bcryptjs, Zod, Tailwind CSS, shadcn/ui, REST APIs, Vercel",
+    "GithubRepository": "https://github.com/Avishkar2004/TaskManager",
+    "domain": "https://task-manager-xi-sable-82.vercel.app"
   },
   "Whiteboard": {
     "desc": "A real-time collaborative whiteboard application built with React, Node.js, Express, MongoDB, Redis, and Socket.IO. This project allows users to register, log in, create and share whiteboards, and collaborate in real time.",
@@ -22,7 +40,7 @@
     "GithubRepository": "https://github.com/Avishkar2004/Whiteboard-Collaborate-Create",
     "domain": "https://whiteboard-collaborate-create.vercel.app/"
   },
-  "Artistly.com": {
+  "Artistly": {
     "desc": "Modern platform for booking performing artists. Built with Next.js, React, and Tailwind CSS. Demo uses mock data. Not real-time.",
     "techStack": "Next.js 14, TypeScript, Tailwind CSS, ShadCN, Radix UI, React Hook Form, Yup, Lucide React, Vercel",
     "GithubRepository": "https://github.com/Avishkar2004/Artistly",

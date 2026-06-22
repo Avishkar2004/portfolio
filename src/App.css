@@ -18,6 +18,7 @@ html.lenis body {
   background-color: var(--navy);
   display: flex;
   margin: auto;
+  overflow: hidden;
 }
 .App-logo {
   height: 40vmin;
