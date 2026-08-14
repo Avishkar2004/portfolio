@@ -4,11 +4,23 @@
     "techStack": "React.js, Node.js, Express.js, MongoDB, Tailwind CSS, Chart.js, JWT, Cloudinary, Twilio, Nodemailer, Vercel, MongoDB Atlas",
     "domain": "https://www.yesitryme.com"
   },
+  "AutoFill": {
+    "desc": "A Manifest V3 browser extension that fills job application forms on any website from a profile stored encrypted on your own device. Fields are matched through a four-tier cascade that runs fully offline, learns from every correction you make, and ends each fill in a review panel rather than a submission.",
+    "techStack": "TypeScript (strict), WXT / Manifest V3, React 19, Tailwind v4, Dexie / IndexedDB, Zod, WebCrypto, Transformers.js + ONNX Runtime, Anthropic SDK, Vitest (431 tests)",
+    "GithubRepository": "",
+    "domain": "https://github.com/Avishkar2004/apply-once"
+  },
   "Chatbot AI": {
     "desc": "Production-ready multi-project AI chatbot with secure JWT auth, Redis caching & rate limits, and robust Groq LLM integration for fast, reliable chat.",
     "techStack": "React 18, React Router, Context API, Tailwind CSS, Axios, Framer Motion, GSAP, Node.js, Express 5, MongoDB, MongoDB Atlas (Cloud), Mongoose, Redis (Cloud), JWT, express-validator, express-rate-limit, CORS, morgan, Groq SDK, Vercel",
     "GithubRepository": "https://github.com/Avishkar2004/Chatbot-AI",
     "domain": "https://chat-bot-ai-v6fl.vercel.app/"
+  },
+  "Bug Tracker": {
+    "desc": "Full-stack issue tracking system (React 19 + Express + MongoDB). JWT auth with 4 roles, full bug lifecycle from report to close, threaded comments, audit trail, bulk actions, CSV/JSON export, and a dashboard with hand-built SVG charts — zero charting libraries.",
+    "techStack": "React 19, Express, MongoDB, Mongoose, JWT, REST APIs, SVG Charts (hand-built)",
+    "GithubRepository": "https://github.com/Avishkar2004/BugTracker",
+    "domain": ""
   },
   "Eye Tracking Browser Extension": {
     "desc": "Built a browser extension that enables hands-free scrolling using real-time eye and head movement tracking through the webcam",
