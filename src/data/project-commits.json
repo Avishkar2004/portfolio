@@ -1,35 +1,134 @@
 {
   "YesITryMe": [],
+  "AutoFill": [],
   "Chatbot AI": [
     {
-      "sha": "57de1eb",
-      "message": "Unify dark theme across the app and improve chat copy UX",
-      "date": "2026-05-16T10:30:08Z",
-      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/57de1eb4af6a3909ede16f8564eb183b5da02c26"
+      "sha": "a5a155c",
+      "message": "fix: repair the auth paths that silently swallowed errors, add real password",
+      "date": "2026-08-06T06:41:32Z",
+      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/a5a155c4dadb00792fa5f1cf23a01c6fc899902a"
     },
     {
-      "sha": "c276260",
-      "message": "feat(chat): polish ProjectChat UI and send flow",
-      "date": "2026-05-08T14:18:45Z",
-      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/c27626085fe1609dec1107479e75b340bed34a89"
+      "sha": "bfa405d",
+      "message": "feat(server): close the unauthenticated /api/cache/stats hole, add request-ID logging, token/cost metrics and a 45-test offline suite",
+      "date": "2026-08-05T16:19:06Z",
+      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/bfa405d46c4fe716438dd66741e51c6f79e043c9"
     },
     {
-      "sha": "c23c9d0",
-      "message": "fix(cors): allow Vercel deploy origins and handle preflight",
-      "date": "2026-05-08T11:14:58Z",
-      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/c23c9d02a1622a010a0eafa2b776522bc3a3b33c"
+      "sha": "87b6363",
+      "message": "refactor(client): unify every page onto one indigo/graphite design system, replacing the parallel emerald palette, dead light-mode classes and multi-second entrance animations, adding Logo/Avatar/Select/EmptyState/PageHeader/IconButton primitives, and fixing unstyled mobile nav links, flashing Dashboard skeletons and doubled code-block backgrounds",
+      "date": "2026-08-02T09:50:58Z",
+      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/87b6363b67c993e5cc3000cde9e379288585d142"
     },
     {
-      "sha": "3bd1974",
-      "message": "fix(cors): allow Vercel deploy origins and handle preflight",
-      "date": "2026-05-08T11:11:27Z",
-      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/3bd1974e1f4dc3202d3f223685668d1ed03cbf17"
+      "sha": "29b648d",
+      "message": "Updates on cliend side",
+      "date": "2026-07-28T15:00:44Z",
+      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/29b648d0cdf63499ba352d131f07a9a6fcf0a442"
     },
     {
-      "sha": "6d0f174",
-      "message": "Updates on the server",
-      "date": "2026-02-09T15:20:27Z",
-      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/6d0f1744323d1a3a98e561417b44a5663b09e673"
+      "sha": "7876791",
+      "message": "Updates on client side code",
+      "date": "2026-07-21T16:08:09Z",
+      "url": "https://github.com/Avishkar2004/ChatBot-AI/commit/7876791d44b7645ba189f8c8f03a6d63b0d889eb"
+    }
+  ],
+  "Bug Tracker": [
+    {
+      "sha": "3133f3e",
+      "message": "feat(client): add design-system + motion layer for the UI redesign",
+      "date": "2026-08-14T05:50:47Z",
+      "url": "https://github.com/Avishkar2004/BugTracker/commit/3133f3e629660af4d929e7bea865c531dd156f2e"
+    },
+    {
+      "sha": "aea27c4",
+      "message": "feat(client): add design-system + motion layer for the UI redesign",
+      "date": "2026-08-14T05:45:28Z",
+      "url": "https://github.com/Avishkar2004/BugTracker/commit/aea27c416f98d3276110386abb6e8c23cb109e61"
+    },
+    {
+      "sha": "c515d23",
+      "message": "feat(client): add design-system + motion layer for the UI redesign",
+      "date": "2026-08-14T05:45:00Z",
+      "url": "https://github.com/Avishkar2004/BugTracker/commit/c515d234c7e9b065c7d85a8fcf7aa8824fad4914"
+    },
+    {
+      "sha": "2e9a70e",
+      "message": "updates",
+      "date": "2025-12-10T15:51:41Z",
+      "url": "https://github.com/Avishkar2004/BugTracker/commit/2e9a70e85ceff25ac6eae9b03470c8820f917a64"
+    },
+    {
+      "sha": "d4f47a8",
+      "message": "Roadmap of this project",
+      "date": "2025-12-10T15:50:13Z",
+      "url": "https://github.com/Avishkar2004/BugTracker/commit/d4f47a81fed645a37e6fc3b89c68c8e63ceff286"
+    }
+  ],
+  "m416-keyboard": [
+    {
+      "sha": "ca97bdc",
+      "message": "Add per-key sounds: Enter fires an M416 reload",
+      "date": "2026-08-17T11:14:10Z",
+      "url": "https://github.com/Avishkar2004/m416-keyboard/commit/ca97bdcac6ae0fdcabf6b3616a03aab4e8e85906"
+    },
+    {
+      "sha": "0175449",
+      "message": "Add per-key sounds: Enter fires an M416 reload",
+      "date": "2026-08-17T06:54:15Z",
+      "url": "https://github.com/Avishkar2004/m416-keyboard/commit/0175449e5c24cd4819b8de36f1988e60923491f6"
+    },
+    {
+      "sha": "fd8c780",
+      "message": "Build a Windows desktop app in Python that plays a gunshot sound on every",
+      "date": "2026-08-17T05:52:52Z",
+      "url": "https://github.com/Avishkar2004/m416-keyboard/commit/fd8c7807946dde343a204b56580bc8e4ad452919"
+    }
+  ],
+  "Eye Tracking Browser Extension": [
+    {
+      "sha": "159b280",
+      "message": "Change popup.js and added some flags",
+      "date": "2026-05-03T04:48:28Z",
+      "url": "https://github.com/Avishkar2004/eye-tracker-scroll-extension/commit/159b28032b9d869a0630099aa053a1aec7f82922"
+    },
+    {
+      "sha": "a6ce80c",
+      "message": "Increased animation duration, Added cubic easing and Improved animation loop",
+      "date": "2026-01-02T13:08:46Z",
+      "url": "https://github.com/Avishkar2004/eye-tracker-scroll-extension/commit/a6ce80c9a656477cab60cc7d25124744bdf1b13f"
+    },
+    {
+      "sha": "ce99b64",
+      "message": "Increased animation duration, Added cubic easing and Improved animation loop",
+      "date": "2026-01-01T14:49:15Z",
+      "url": "https://github.com/Avishkar2004/eye-tracker-scroll-extension/commit/ce99b64aad28e1701d7c4711d253441074da8681"
+    },
+    {
+      "sha": "1328f74",
+      "message": "Increased animation duration, Added cubic easing and Improved animation loop",
+      "date": "2025-12-31T14:18:18Z",
+      "url": "https://github.com/Avishkar2004/eye-tracker-scroll-extension/commit/1328f74c1be9a682f5a74ac1ad94d9d03949fa2d"
+    },
+    {
+      "sha": "8ad8b99",
+      "message": "Increased animation duration, Added cubic easing and Improved animation loop",
+      "date": "2025-12-31T14:06:06Z",
+      "url": "https://github.com/Avishkar2004/eye-tracker-scroll-extension/commit/8ad8b99941b325f3c7fc60452982158e798c977a"
+    }
+  ],
+  "InstaAutomation": [
+    {
+      "sha": "da89013",
+      "message": "Readme file added",
+      "date": "2026-06-18T10:39:21Z",
+      "url": "https://github.com/Avishkar2004/insta-Automation/commit/da89013dfd5e295fedb1c7d06dc1d4d41788b6ae"
+    },
+    {
+      "sha": "889cd8e",
+      "message": "first commit",
+      "date": "2026-06-18T10:35:28Z",
+      "url": "https://github.com/Avishkar2004/insta-Automation/commit/889cd8efe1cbb56a22a62b2b6b4aece47c7f0bb2"
     }
   ],
   "Scrapie": [
@@ -64,6 +163,38 @@
       "url": "https://github.com/Avishkar2004/scapeflow/commit/7ddbee5a5af27c4e7a80ef9a82a0c053bb5d0737"
     }
   ],
+  "TaskManager": [
+    {
+      "sha": "18f6096",
+      "message": "added repo link in the footer",
+      "date": "2025-12-07T17:11:53Z",
+      "url": "https://github.com/Avishkar2004/TaskManager/commit/18f609656b17023b62b7f19c75a2b91f2cc387e8"
+    },
+    {
+      "sha": "c21bfcd",
+      "message": "fix: update PostCSS config to use string format for Next.js compatibility",
+      "date": "2025-12-07T16:46:05Z",
+      "url": "https://github.com/Avishkar2004/TaskManager/commit/c21bfcdca7dc9b38599678218d1933facc7e8e49"
+    },
+    {
+      "sha": "0506e46",
+      "message": "fix: move all devDependencies to dependencies for production deployment",
+      "date": "2025-12-07T16:42:00Z",
+      "url": "https://github.com/Avishkar2004/TaskManager/commit/0506e462f95b84cabd23ff8898c430da8744f428"
+    },
+    {
+      "sha": "2a92256",
+      "message": "fix: update PostCSS config to use explicit require() for better plugin resolution",
+      "date": "2025-12-07T16:38:49Z",
+      "url": "https://github.com/Avishkar2004/TaskManager/commit/2a92256076bcacd8cb8a04422ec22a897bcb0221"
+    },
+    {
+      "sha": "2d57aaa",
+      "message": "fix: update PostCSS config to use explicit require() for better plugin resolution",
+      "date": "2025-12-07T16:36:37Z",
+      "url": "https://github.com/Avishkar2004/TaskManager/commit/2d57aaa6e6c136d79ff3fe35e9f1bdbdf308bf65"
+    }
+  ],
   "Whiteboard": [
     {
       "sha": "a078335",
@@ -96,7 +227,7 @@
       "url": "https://github.com/Avishkar2004/Whiteboard-Collaborate-Create/commit/dfa006f0fca55fbd408470b00ac1df077071f172"
     }
   ],
-  "Artistly.com": [
+  "Artistly": [
     {
       "sha": "f120d94",
       "message": "fixed ah Resolver error",

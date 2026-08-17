@@ -1,11 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  fadeUp,
-  staggerContainer,
-  viewportOnce,
-  EASE,
-} from "../animations/variants";
+import { fadeUp, staggerContainer, viewportOnce } from "../animations/variants";
 import "../styles/Skills.css";
 
 export const skills = {
@@ -68,11 +63,11 @@ export const skills = {
 };
 
 const META = {
-  languages: { label: "Languages", icon: "💻", level: 0.9 },
-  frontend: { label: "Frontend", icon: "🎨", level: 0.95 },
-  backend: { label: "Backend", icon: "⚙️", level: 0.9 },
-  devOps: { label: "DevOps & Deployment", icon: "🚀", level: 0.8 },
-  other: { label: "Tools & Concepts", icon: "🧰", level: 0.85 },
+  languages: { label: "Languages", icon: "💻" },
+  frontend: { label: "Frontend", icon: "🎨" },
+  backend: { label: "Backend", icon: "⚙️" },
+  devOps: { label: "DevOps & Deployment", icon: "🚀" },
+  other: { label: "Tools & Concepts", icon: "🧰" },
 };
 
 const Skills = () => {
@@ -90,7 +85,7 @@ const Skills = () => {
           viewport={viewportOnce}
         >
           {Object.entries(skills).map(([category, skillList]) => {
-            const meta = META[category] || { label: category, icon: "✨", level: 0.8 };
+            const meta = META[category] || { label: category, icon: "✨" };
             return (
               <motion.div key={category} className="skill-category" variants={fadeUp}>
                 <div className="category-header">
@@ -98,15 +93,6 @@ const Skills = () => {
                   <div className="category-icon">{meta.icon}</div>
                 </div>
                 <p className="skill-text">{skillList.join(", ")}</p>
-                <div className="skill-bar" aria-hidden="true">
-                  <motion.span
-                    className="skill-bar__fill"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: meta.level }}
-                    viewport={viewportOnce}
-                    transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-                  />
-                </div>
               </motion.div>
             );
           })}
