@@ -22,6 +22,12 @@
     "GithubRepository": "https://github.com/Avishkar2004/BugTracker",
     "domain": ""
   },
+  "m416-keyboard": {
+    "desc": "A Python desktop app that plays a gunshot on every keypress system-wide — Chrome, VS Code, Discord, anywhere. Includes a Tkinter control panel, per-key sound mapping (Enter fires a reload), and an audio import pipeline that trims downloaded clips for zero-lag playback.",
+    "techStack": "Python, Win32 API (ctypes), pygame-ce, Tkinter, NumPy",
+    "GithubRepository": "https://github.com/Avishkar2004/m416-keyboard",
+    "domain": ""
+  },
   "Eye Tracking Browser Extension": {
     "desc": "Built a browser extension that enables hands-free scrolling using real-time eye and head movement tracking through the webcam",
     "techStack": "JavaScript, Chrome Extensions API, Brave Browser, MediaPipe Face Mesh, WebRTC, Computer Vision, HTML, CSS.",
