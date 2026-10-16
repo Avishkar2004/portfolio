@@ -257,7 +257,7 @@ export default function Intro() {
           </div>
           <motion.div className="intro-cta-row" variants={bodyItem}>
             <MagneticButton
-              href="mailto:avishkarkakde2004@gmail.com"
+              href="#contact"
               className="intro-contact"
             >
               Say hi!

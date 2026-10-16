@@ -1,0 +1,206 @@
+#contact {
+  margin: auto;
+  max-width: var(--container);
+  padding-top: var(--space-section);
+}
+
+.contact-headline {
+  margin: 0 0 var(--space-xl);
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+}
+.contact-headline em {
+  color: var(--accent);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ---- Left: email, links, location --------------------------------------- */
+
+.contact-aside {
+  display: grid;
+  gap: var(--space-l);
+}
+
+.contact-label {
+  margin: 0 0 var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-note {
+  margin: 0;
+  color: var(--text);
+}
+
+.contact-email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.contact-email__address {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  transition: border-color var(--duration-fast) ease;
+}
+.contact-email__address:hover {
+  border-color: var(--accent);
+}
+.contact-email__copy {
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+.contact-email__copy:hover {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.contact-links {
+  display: flex;
+  gap: var(--space-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-links a {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 500;
+  color: var(--text) !important;
+  transition: border-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+.contact-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent-text) !important;
+}
+
+/* ---- Right: the form ---------------------------------------------------- */
+
+.contact-form {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.contact-field {
+  display: grid;
+  gap: var(--space-3xs);
+}
+.contact-field label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Underlined, editorial inputs. Focus thickens the rule to accent. */
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: var(--space-xs) 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--step-0);
+  transition: border-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+.contact-field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+  box-shadow: 0 1px 0 0 var(--accent);
+}
+
+.contact-honeypot {
+  display: none;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-s) var(--space-l);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+.contact-submit:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.contact-submit svg {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.contact-submit:hover:not(:disabled) svg {
+  transform: translateX(4px);
+}
+
+.contact-status {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--text);
+}
+.contact-status.is-error {
+  color: var(--accent-text);
+}
+
+@media only screen and (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

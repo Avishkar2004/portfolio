@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Credits from "./components/Credits";
+import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 import Skills from "./components/skills";
 import ProjectCommitsPage from "./components/ProjectCommitsPage";
@@ -25,6 +26,7 @@ function PortfolioHome() {
       <Projects />
       <Skills />
       <Experience />
+      <Contact />
       <Credits />
     </>
   );

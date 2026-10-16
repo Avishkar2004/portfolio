@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { id: "projects", label: "Work" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
 ];
 
 const SOCIALS = [
