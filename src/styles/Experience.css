@@ -1,26 +1,56 @@
 #experience {
-  min-height: 50vh;
   margin: auto;
-  max-width: var(--container);
   padding-top: var(--space-section);
+  max-width: var(--container);
 }
 
-.joblist-job-title {
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  font-weight: 400;
-  color: var(--text);
+.timeline {
+  position: relative;
+  padding-left: var(--space-xl);
 }
 
-.joblist-job-company {
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent-text);
+/* Grey rail with the accent line drawing down it (scaleY set inline). */
+.timeline__rail {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0;
+  left: 6px;
+  width: 2px;
+  background: var(--line);
+}
+.timeline__progress {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: top;
+}
+
+.timeline__list {
+  display: grid;
+  gap: var(--space-2xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline__item {
+  position: relative;
+}
+
+/* Centred on the rail: rail is 2px wide at 6px, dot is 14px wide. */
+.timeline__dot {
+  position: absolute;
+  top: 0.2rem;
+  left: calc(-1 * var(--space-xl));
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
 }
 
 .joblist-duration {
+  margin: 0;
   font-family: var(--font-mono);
   font-size: var(--step--2);
   letter-spacing: var(--tracking-label);
@@ -28,101 +58,47 @@
   color: var(--text-muted);
 }
 
-#vertical-tabpanel {
-  margin-top: -28px;
-  padding-left: 25px;
+.timeline__role {
+  margin: var(--space-2xs) 0 var(--space-s);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: var(--leading-snug);
 }
-
-/* MUI Typography would otherwise force Roboto inside the tab panels. */
-#experience .MuiTypography-root {
-  font-family: inherit;
+.joblist-job-title {
+  color: var(--text);
 }
-
-.MuiTab-wrapper {
-  font-family: var(--font-body);
-  font-size: var(--step--1);
-  text-transform: none;
-  text-align: left;
-  align-items: flex-start !important;
-}
-
-.MuiButtonBase-root {
-  color: var(--text-muted) !important;
-}
-
-/* MUI dims unselected tabs to 70% opacity, which breaks AA contrast. */
-#experience .MuiTab-textColorInherit {
-  opacity: 1;
-}
-
-#experience .MuiButtonBase-root:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
-}
-
-#experience .MuiTab-root.Mui-selected {
-  color: var(--accent-text) !important;
-}
-
-.PrivateTabIndicator-colorSecondary-5 {
-  background-color: var(--accent) !important;
-}
-.jss5 {
-  background-color: var(--accent) !important;
-}
-.makeStyles-tabs-2 {
-  border-right: 1px solid var(--line) !important;
-}
-#experience .MuiTab-root {
-  padding: 6px 20px;
-}
-
-ul {
-  list-style: none;
-  margin-left: -40px;
-}
-
-.job-description li::before {
-  content: "▹    ";
-  color: var(--accent);
-  position: absolute;
-  left: 0;
-}
-
-.job-description li {
-  position: relative;
-  padding-left: 30px;
-  padding-bottom: var(--space-s);
-  font-size: var(--step-0);
-  line-height: var(--leading-body);
-  color: var(--text-muted);
+.joblist-job-company {
+  font-style: italic;
+  color: var(--accent-text);
 }
 
 .job-description {
-  padding-top: var(--space-m);
-  max-width: 650px;
-  font-family: var(--font-body);
+  display: grid;
+  gap: var(--space-xs);
+  max-width: 42rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.job-description a,
-.job-description b {
-  font-weight: 600;
+.job-description li {
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: var(--leading-body);
+  color: var(--text-muted);
+}
+.job-description li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 @media only screen and (max-width: 600px) {
-  #experience {
-    padding-left: unset;
-    padding-right: unset;
+  .timeline {
+    padding-left: var(--space-l);
   }
-
-  .jss1 {
-    height: unset !important;
-    flex-direction: column !important;
-  }
-
-  .makeStyles-root-1 {
-    height: unset !important;
-    width: unset;
-    flex-direction: column;
+  .timeline__dot {
+    left: calc(-1 * var(--space-l));
   }
 }

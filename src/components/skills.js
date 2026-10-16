@@ -62,42 +62,78 @@ export const skills = {
   ],
 };
 
-const META = {
-  languages: { label: "Languages", icon: "💻" },
-  frontend: { label: "Frontend", icon: "🎨" },
-  backend: { label: "Backend", icon: "⚙️" },
-  devOps: { label: "DevOps & Deployment", icon: "🚀" },
-  other: { label: "Tools & Concepts", icon: "🧰" },
+const LABELS = {
+  languages: "Languages",
+  frontend: "Frontend",
+  backend: "Backend",
+  devOps: "DevOps & Deployment",
+  other: "Tools & Concepts",
 };
+
+// The headline tools that scroll past in the marquee.
+const MARQUEE = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "Redis",
+  "Socket.io",
+  "Docker",
+  "AWS",
+  "Tailwind CSS",
+  "Framer Motion",
+];
+
+const pad = (n) => String(n).padStart(2, "0");
 
 const Skills = () => {
   return (
     <div id="skills">
       <div className="section-header">
-        <span className="section-title">/ skills</span>
+        <span className="section-index">03</span>
+        <h2 className="section-title">Skills</h2>
       </div>
-      <div className="about-content">
-        <motion.div
-          className="skills-grid"
-          variants={staggerContainer(0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          {Object.entries(skills).map(([category, skillList]) => {
-            const meta = META[category] || { label: category, icon: "✨" };
-            return (
-              <motion.div key={category} className="skill-category" variants={fadeUp}>
-                <div className="category-header">
-                  <h3 className="category-title">{meta.label}</h3>
-                  <div className="category-icon">{meta.icon}</div>
-                </div>
-                <p className="skill-text">{skillList.join(", ")}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+
+      {/* Decorative — the full, accessible list is below. Two copies so the
+          loop is seamless at translateX(-50%). */}
+      <div className="skills-marquee" aria-hidden="true">
+        <div className="skills-marquee__track">
+          {[0, 1].map((copy) => (
+            <span className="skills-marquee__group" key={copy}>
+              {MARQUEE.map((name) => (
+                <span key={name}>
+                  {name}
+                  <span className="skills-marquee__sep">✦</span>
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
       </div>
+
+      <motion.div
+        className="skills-groups"
+        variants={staggerContainer(0.08)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        {Object.entries(skills).map(([category, list], i) => (
+          <motion.div className="skill-group" key={category} variants={fadeUp}>
+            <h3 className="skill-group__title">
+              <span className="project-index">{pad(i + 1)}</span>
+              {LABELS[category] || category}
+            </h3>
+            <ul className="tech-chips">
+              {list.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };
