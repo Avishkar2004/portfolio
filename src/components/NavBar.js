@@ -4,6 +4,7 @@ import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { EASE } from "../animations/variants";
+import ThemeToggle from "./ThemeToggle";
 import "../styles/NavBar.css";
 
 const NAV_LINKS = [
@@ -124,6 +125,8 @@ export default function NavBar() {
             </motion.a>
           ))}
         </div>
+
+        <ThemeToggle />
 
         <button
           className="site-nav__burger"

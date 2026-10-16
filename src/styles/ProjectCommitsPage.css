@@ -7,11 +7,11 @@
 
 .commits-back {
   display: inline-block;
-  font-family: "NTR", sans-serif;
-  font-size: 16px;
-  color: var(--green-bright);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--accent-text);
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-l);
 }
 
 .commits-back:hover {
@@ -23,28 +23,29 @@
 }
 
 .commits-page-title {
-  font-family: "NTR", sans-serif;
-  color: var(--lightest-slate);
-  font-size: 42px;
-  font-weight: bold;
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
   margin: 0.5rem 0 1rem;
 }
 
 .commits-repo-link {
-  font-family: "NTR", sans-serif;
-  font-size: 16px;
-  color: var(--slate);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--text-muted);
   text-decoration: none;
 }
 
 .commits-repo-link:hover {
-  color: var(--green-bright);
+  color: var(--accent-text);
 }
 
 .commits-empty {
-  font-family: "NTR", sans-serif;
-  color: var(--slate);
-  font-size: 18px;
+  color: var(--text-muted);
+  font-size: var(--step-0);
 }
 
 .commits-list-page {
@@ -57,10 +58,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-m);
   padding: 1.25rem 1.5rem;
-  background-color: var(--light-navy);
-  border-radius: 12px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
 }
 
 .commits-list-page .commit-item:last-child {
@@ -75,26 +77,24 @@
 }
 
 .commits-list-page .commit-sha {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 14px;
-  color: var(--green-bright);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--accent-text);
 }
 
 .commits-list-page .commit-message {
-  font-family: "NTR", sans-serif;
-  font-size: 20px;
-  line-height: 1.5;
-  color: var(--light-slate);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  color: var(--text);
 }
 
 .commits-list-page .commit-link:hover .commit-message {
-  color: var(--green-bright);
+  color: var(--accent-text);
 }
 
 .commits-list-page .commit-date {
-  font-family: "NTR", sans-serif;
-  font-size: 14px;
-  color: var(--slate);
-  opacity: 0.85;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--text-muted);
   padding-left: 0;
 }

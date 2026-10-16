@@ -30,11 +30,11 @@
 
 a {
   text-decoration: none;
-  color: var(--green-bright);
+  color: var(--accent-text);
 }
 
 a:hover {
-  color: var(--lightest-slate) !important;
+  color: var(--text) !important;
 }
 
 .sidebar-logos {

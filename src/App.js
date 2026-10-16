@@ -14,7 +14,6 @@ import ScrollProgress from "./components/ScrollProgress";
 import { pageTransition } from "./animations/variants";
 import "./App.css";
 import "./styles/Global.css";
-import "rsuite/dist/styles/rsuite-default.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 

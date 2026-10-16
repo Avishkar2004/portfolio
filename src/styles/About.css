@@ -1,17 +1,17 @@
 #about {
   min-height: 50vh;
   margin: auto;
-  max-width: 1000px;
-  padding-top: 100px;
+  max-width: var(--container);
+  padding-top: var(--space-section);
 }
 
 .about-description ul.tech-stack {
-  padding-top: 20px;
+  padding-top: var(--space-m);
   padding-left: 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem 1rem;
+  gap: var(--space-2xs) var(--space-s);
 }
 
 @media only screen and (max-width: 600px) {
@@ -23,13 +23,15 @@
 .about-description li {
   position: relative;
   padding-left: 20px;
-  font-size: 18px;
-  color: var(--slate);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  text-align: left;
+  color: var(--text-muted);
 }
 
 .about-description li::before {
   content: "▹    ";
-  color: var(--green-bright);
+  color: var(--accent);
   position: absolute;
   left: 0;
 }
@@ -40,30 +42,28 @@
 }
 
 .about-description {
-  font-family: "NTR", sans-serif;
-  color: var(--slate);
+  color: var(--text-muted);
   max-width: 600px;
-  font-size: 22px;
-  text-align: justify;
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
   margin: 0;
 }
 
 .about-description a,
 .about-description b {
-  font-size: 21px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .about-image {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
 .about-image img {
   max-width: 300px;
   height: auto;
-  border-radius: 10px;
+  border-radius: var(--radius-m);
   margin-left: 30px;
-  box-shadow: 6px 13px 23px -5px rgba(0, 0, 0, 0.46);
+  box-shadow: var(--shadow-l);
   border: none;
 }
 
@@ -82,17 +82,6 @@
     height: unset;
     padding-left: unset;
     padding-right: unset;
-    padding-top: 30%;
-  }
-
-  .about-description {
-    font-size: 18px;
-    text-align: justify;
-  }
-
-  .about-description a,
-  .about-description b {
-    font-size: 17px;
   }
 
   .about-image img {

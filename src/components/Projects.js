@@ -11,7 +11,6 @@ import {
 } from "framer-motion";
 import "../styles/Projects.css";
 import FolderOpenRoundedIcon from "@material-ui/icons/FolderOpenRounded";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ExternalLinks from "./ExternalLinks";
 import { fadeUp, staggerContainer, viewportOnce, SPRING } from "../animations/variants";
 import projects from "../data/projects.json";
@@ -35,7 +34,7 @@ function ProjectCard({ name, project }) {
   const my = useMotionValue(0);
   const rotateX = useSpring(useTransform(py, [0, 1], [7, -7]), SPRING);
   const rotateY = useSpring(useTransform(px, [0, 1], [-7, 7]), SPRING);
-  const spotlight = useMotionTemplate`radial-gradient(220px circle at ${mx}px ${my}px, rgba(100, 255, 218, 0.16), transparent 65%)`;
+  const spotlight = useMotionTemplate`radial-gradient(220px circle at ${mx}px ${my}px, var(--accent-soft), transparent 65%)`;
 
   const handleMove = (e) => {
     if (reduce || !ref.current) return;

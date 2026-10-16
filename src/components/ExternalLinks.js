@@ -24,7 +24,7 @@ class ExternalLinks extends React.Component {
             <GitHubIcon
               style={{
                 fontSize: 20,
-                color: "var(--lightest-slate)",
+                color: "var(--text)",
               }}
             />
           </a>
@@ -38,7 +38,7 @@ class ExternalLinks extends React.Component {
             <HistoryIcon
               style={{
                 fontSize: 22,
-                color: "var(--lightest-slate)",
+                color: "var(--text)",
               }}
             />
           </Link>
@@ -54,7 +54,7 @@ class ExternalLinks extends React.Component {
             <OpenInBrowserIcon
               style={{
                 fontSize: 25,
-                color: "var(--lightest-slate)",
+                color: "var(--text)",
               }}
             />
           </a>

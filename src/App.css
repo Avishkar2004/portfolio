@@ -14,70 +14,48 @@ html.lenis body {
 }
 
 .App {
-  font-family: "NTR";
-  background-color: var(--navy);
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
   display: flex;
   margin: auto;
   overflow: hidden;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  transition: background-color var(--duration-base) ease;
 }
 
 a {
   text-decoration: none !important;
-  color: var(--green-bright) !important;
+  color: var(--accent-text) !important;
 }
 
 #content {
-  /* padding: 80px 200px; */
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-.rs-steps-horizontal .rs-steps-item-content {
-  text-align: left;
-}
-
-::selection {
-  background: var(--lightest-navy); /* WebKit/Blink Browsers */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-}
 
 .section-header {
   display: flex;
-  padding-bottom: 42px;
-  width: 100vw;
+  align-items: baseline;
+  gap: var(--space-m);
+  padding-bottom: var(--space-xl);
 }
 
 .section-header::after {
   content: "";
-  display: block;
-  width: 300px;
-  margin-top: 39px;
+  flex: 1;
+  max-width: 300px;
   height: 1px;
-  margin-left: 20px;
-  background-color: var(--lightest-navy);
+  background-color: var(--line);
 }
 
 .section-title {
-  font-family: "NTR", sans-serif;
-  color: var(--lightest-slate);
-  font-size: 46px;
-  font-weight: bold;
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
 }
 
 @media only screen and (max-width: 600px) {
@@ -91,15 +69,7 @@ a {
     width: 100%;
   }
 
-  .section-header {
-    width: unset;
-  }
-
   .section-header::after {
     display: none;
-  }
-
-  .section-title {
-    font-size: 32px;
   }
 }

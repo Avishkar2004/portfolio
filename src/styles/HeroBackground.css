@@ -10,9 +10,10 @@
 .hero-bg__grid {
   position: absolute;
   inset: -50%;
-  background-image: linear-gradient(rgba(100, 255, 218, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100, 255, 218, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 46px 46px;
+  opacity: 0.5;
   mask-image: radial-gradient(circle at 50% 40%, black, transparent 70%);
   -webkit-mask-image: radial-gradient(circle at 50% 40%, black, transparent 70%);
   animation: hero-grid-drift 40s linear infinite;
@@ -33,7 +34,7 @@
   height: 460px;
   top: -120px;
   left: -80px;
-  background: radial-gradient(circle, rgba(100, 255, 218, 0.45), transparent 65%);
+  background: radial-gradient(circle, var(--accent-glow), transparent 65%);
   animation: hero-blob-1 22s ease-in-out infinite;
 }
 
@@ -42,7 +43,7 @@
   height: 540px;
   top: 10%;
   right: -140px;
-  background: radial-gradient(circle, rgba(88, 120, 255, 0.4), transparent 65%);
+  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
   animation: hero-blob-2 28s ease-in-out infinite;
 }
 
@@ -51,18 +52,18 @@
   height: 420px;
   bottom: -120px;
   left: 30%;
-  background: radial-gradient(circle, rgba(100, 255, 218, 0.25), transparent 65%);
+  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
   animation: hero-blob-3 32s ease-in-out infinite;
 }
 
-/* Keeps text readable by darkening edges + blending into the page. */
+/* Fades the backdrop into the page at the edges so text stays readable. */
 .hero-bg__vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse at 50% 45%,
     transparent 30%,
-    var(--navy) 95%
+    var(--bg) 95%
   );
 }
 

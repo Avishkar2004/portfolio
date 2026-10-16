@@ -1,13 +1,173 @@
+/* ==========================================================================
+   Design tokens — "Editorial" direction.
+   Light (paper + ink) is the default. Dark applies when the OS asks for it,
+   unless the visitor picked light via the toggle (data-theme="light").
+   Component CSS should only ever reference these semantic names.
+   ========================================================================== */
+
 :root {
-  --dark-navy: #020c1b;
-  --navy: #0a192f;
-  --light-navy: #112240;
-  --lightest-navy: #233554;
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --slate: #8892b0;
-  --light-slate: #a8b2d1;
-  --lightest-slate: #ccd6f6;
-  --white: #e6f1ff;
-  --green-bright: #64ffda;
-  --green-tint: rgba(100, 255, 218, 0.1);
+  color-scheme: light;
+
+  /* Colour */
+  --bg: #f4f1ea;
+  --bg-translucent: rgba(244, 241, 234, 0.72);
+  --bg-translucent-strong: rgba(244, 241, 234, 0.94);
+  --surface: #ece8df;
+  --surface-hover: #e4dfd3;
+  --text: #111111;
+  --text-muted: #5f5b54;
+  --line: #d9d4c7;
+  --accent: #ff5a1f; /* big type, shapes, rules — not small text */
+  --accent-text: #b8300d; /* links + small accent text (AA on bg and surface) */
+  --accent-contrast: #ffffff; /* text on a solid accent fill */
+  --accent-soft: rgba(255, 90, 31, 0.1);
+  --accent-glow: rgba(255, 90, 31, 0.22);
+  --shadow-color: rgba(60, 45, 20, 0.16);
+
+  /* Grain overlay */
+  --grain-opacity: 0.07;
+
+  /* Typography */
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Fluid type scale: each step runs from its min at a 375px viewport to
+     its max at 1440px. */
+  --step--2: clamp(0.75rem, 0.728rem + 0.094vw, 0.8125rem); /* 12 → 13 */
+  --step--1: clamp(0.875rem, 0.853rem + 0.094vw, 0.9375rem); /* 14 → 15 */
+  --step-0: clamp(1rem, 0.956rem + 0.188vw, 1.125rem); /* 16 → 18 */
+  --step-1: clamp(1.1875rem, 1.1rem + 0.376vw, 1.4375rem); /* 19 → 23 */
+  --step-2: clamp(1.4375rem, 1.283rem + 0.657vw, 1.875rem); /* 23 → 30 */
+  --step-3: clamp(1.75rem, 1.442rem + 1.315vw, 2.625rem); /* 28 → 42 */
+  --step-4: clamp(2.25rem, 1.678rem + 2.441vw, 3.875rem); /* 36 → 62 */
+  --step-5: clamp(3rem, 1.944rem + 4.507vw, 6rem); /* 48 → 96 */
+  --step-6: clamp(3.75rem, 1.549rem + 9.39vw, 10rem); /* 60 → 160 */
+
+  --leading-tight: 1.02;
+  --leading-snug: 1.25;
+  --leading-body: 1.6;
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.08em;
+
+  /* Spacing */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-section: clamp(4.5rem, 3rem + 6.4vw, 9rem); /* 72 → 144 */
+  --gutter: clamp(1rem, 0.3rem + 3vw, 3rem); /* 16 → 48 */
+  --container: 1000px;
+
+  /* Radius — editorial = mostly square */
+  --radius-s: 2px;
+  --radius-m: 6px;
+  --radius-l: 12px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-s: 0 1px 2px var(--shadow-color);
+  --shadow-m: 0 8px 24px -12px var(--shadow-color);
+  --shadow-l: 0 24px 48px -20px var(--shadow-color);
+
+  /* Motion (mirrors EASE in animations/variants.js) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.35s;
+}
+
+/* Dark palette — shared by the OS preference and the explicit toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0f0e0c;
+    --bg-translucent: rgba(15, 14, 12, 0.72);
+    --bg-translucent-strong: rgba(15, 14, 12, 0.94);
+    --surface: #1a1916;
+    --surface-hover: #23211d;
+    --text: #f1ede4;
+    --text-muted: #a39e93;
+    --line: #2e2b26;
+    --accent: #ff5a1f;
+    --accent-text: #ff7a45;
+    --accent-contrast: #0f0e0c;
+    --accent-soft: rgba(255, 90, 31, 0.14);
+    --accent-glow: rgba(255, 90, 31, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --grain-opacity: 0.05;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f0e0c;
+  --bg-translucent: rgba(15, 14, 12, 0.72);
+  --bg-translucent-strong: rgba(15, 14, 12, 0.94);
+  --surface: #1a1916;
+  --surface-hover: #23211d;
+  --text: #f1ede4;
+  --text-muted: #a39e93;
+  --line: #2e2b26;
+  --accent: #ff5a1f;
+  --accent-text: #ff7a45;
+  --accent-contrast: #0f0e0c;
+  --accent-soft: rgba(255, 90, 31, 0.14);
+  --accent-glow: rgba(255, 90, 31, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --grain-opacity: 0.05;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/* `html body` outranks Bootstrap's reboot, which loads after this file. */
+html body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  transition: background-color var(--duration-base) ease,
+    color var(--duration-base) ease;
+}
+
+/* Film grain over the whole page. Static, so it's composited once and costs
+   nothing while scrolling. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media print {
+  body::after {
+    display: none;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-s);
+}
+
+b,
+strong {
+  font-weight: 600;
+  color: var(--text);
 }

@@ -6,7 +6,7 @@
   justify-content: center;
   text-align: center;
   margin: auto;
-  max-width: 1000px;
+  max-width: var(--container);
   padding-top: 100px;
   min-height: 100vh;
   overflow: hidden;
@@ -34,12 +34,13 @@
 }
 
 .intro-title {
-  font-family: "NTR", sans-serif;
-  font-size: 86px;
-  line-height: 1.05;
-  color: var(--lightest-slate);
-  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: var(--step-5);
   font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+  margin: 0 0 var(--space-xs);
 }
 
 /* Clip mask: each word's inner span slides up from behind this. */
@@ -55,50 +56,25 @@
 }
 
 .intro-name {
-  font-weight: bold;
-  background: linear-gradient(
-    100deg,
-    var(--green-bright),
-    #5878ff,
-    var(--green-bright)
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--green-bright);
-  animation: intro-name-shimmer 5s linear infinite;
-}
-
-@keyframes intro-name-shimmer {
-  to {
-    background-position: 200% center;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .intro-name {
-    animation: none;
-  }
+  font-style: italic;
+  color: var(--accent);
 }
 
 .intro-subtitle {
-  margin-top: 4px;
-  font-family: "NTR", sans-serif;
-  color: var(--slate);
-  text-align: center;
-  font-weight: 300;
-  font-size: 48px;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-style: italic;
+  line-height: var(--leading-snug);
+  color: var(--text-muted);
 }
 
 .intro-desc {
-  color: var(--slate);
-  font-family: "NTR", sans-serif;
-  font-size: 22px;
-  text-align: center;
-  max-width: 600px;
-  padding-bottom: 36px;
-  margin: 12px auto 0;
+  color: var(--text-muted);
+  font-size: var(--step-1);
+  line-height: var(--leading-body);
+  max-width: 34em;
+  padding-bottom: var(--space-l);
+  margin: var(--space-s) auto 0;
 }
 
 .intro-cta-row {
@@ -109,53 +85,35 @@
 .intro-contact {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 22px;
-  font-weight: bolder;
-  font-family: "NTR", sans-serif;
-  padding: 12px 30px;
+  gap: var(--space-2xs);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-l);
   cursor: pointer;
-  border: 1px solid var(--green-bright);
-  border-radius: 6px;
-  color: var(--green-bright) !important;
+  border: 1px solid var(--text);
+  border-radius: var(--radius-pill);
+  color: var(--text) !important;
   background: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
 }
 
 .intro-contact:hover {
-  background-color: var(--green-tint);
-  box-shadow: 0 8px 30px -10px rgba(100, 255, 218, 0.5);
-}
-
-b {
-  font-size: 17px;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast) !important;
 }
 
 @media only screen and (max-width: 600px) {
   #intro {
-    min-height: 100vh;
-    padding-left: unset;
     padding-top: unset;
     margin: 0;
-    align-items: center;
-  }
-
-  .intro-title {
-    font-size: 44px;
-  }
-
-  .intro-subtitle {
-    margin: 0;
-    font-size: 26px;
   }
 
   .intro-desc {
-    font-size: 18px;
     max-width: unset;
-    padding: 0 8px 32px;
-  }
-
-  .intro-contact {
-    font-size: 16px;
+    padding: 0 var(--space-2xs) var(--space-l);
   }
 }
