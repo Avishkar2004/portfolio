@@ -21,7 +21,7 @@ const LINKS = [
 // Web3Forms access key. It can only send mail *to* the inbox it was created
 // for, so it is safe to ship in client code. While it's empty the form falls
 // back to opening a pre-filled email instead.
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "d63dd120-1dec-4596-9f83-e8a246184eee";
 
 const STATUS_TEXT = {
   sending: "Sending…",
@@ -69,31 +69,29 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
 
     if (!WEB3FORMS_KEY) {
       const subject = encodeURIComponent(`Portfolio message from ${data.name}`);
       const body = encodeURIComponent(
-        `${data.message}\n\n— ${data.name} (${data.email})`
+        `${data.message}\n\n— ${data.name} (${data.email})`,
       );
       window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
       return;
     }
 
+    formData.append("access_key", WEB3FORMS_KEY);
+    formData.append("subject", `Portfolio message from ${data.name}`);
+    formData.append("from_name", "Portfolio contact form");
+
     setStatus("sending");
     try {
+      // Plain FormData (no custom headers) keeps this a "simple" CORS request,
+      // so the browser skips the preflight that Web3Forms' firewall can reject.
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          ...data,
-          access_key: WEB3FORMS_KEY,
-          subject: `Portfolio message from ${data.name}`,
-          from_name: "Portfolio contact form",
-        }),
+        body: formData,
       });
       const result = await res.json();
       if (!result.success) throw new Error(result.message);
