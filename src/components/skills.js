@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
+import { m } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "../animations/variants";
 import "../styles/Skills.css";
 
@@ -91,10 +92,7 @@ const pad = (n) => String(n).padStart(2, "0");
 const Skills = () => {
   return (
     <div id="skills">
-      <div className="section-header">
-        <span className="section-index">03</span>
-        <h2 className="section-title">Skills</h2>
-      </div>
+      <SectionHeader index="03" title="Skills" />
 
       {/* Decorative — the full, accessible list is below. Two copies so the
           loop is seamless at translateX(-50%). */}
@@ -113,7 +111,7 @@ const Skills = () => {
         </div>
       </div>
 
-      <motion.div
+      <m.div
         className="skills-groups"
         variants={staggerContainer(0.08)}
         initial="hidden"
@@ -121,7 +119,7 @@ const Skills = () => {
         viewport={viewportOnce}
       >
         {Object.entries(skills).map(([category, list], i) => (
-          <motion.div className="skill-group" key={category} variants={fadeUp}>
+          <m.div className="skill-group" key={category} variants={fadeUp}>
             <h3 className="skill-group__title">
               <span className="project-index">{pad(i + 1)}</span>
               {LABELS[category] || category}
@@ -131,9 +129,9 @@ const Skills = () => {
                 <li key={skill}>{skill}</li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

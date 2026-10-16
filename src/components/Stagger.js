@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   fadeUp,
   fadeUpSmall,
@@ -19,7 +19,7 @@ export function Stagger({
   as = "div",
   amount,
 }) {
-  const Comp = motion[as] || motion.div;
+  const Comp = m[as] || m.div;
   return (
     <Comp
       className={className}
@@ -34,7 +34,7 @@ export function Stagger({
 }
 
 export function StaggerItem({ children, className, small = false, as = "div" }) {
-  const Comp = motion[as] || motion.div;
+  const Comp = m[as] || m.div;
   return (
     <Comp className={className} variants={small ? fadeUpSmall : fadeUp}>
       {children}

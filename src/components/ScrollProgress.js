@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { m, useScroll, useSpring } from "framer-motion";
 import "../styles/ScrollProgress.css";
 
 /**
@@ -15,5 +15,5 @@ export default function ScrollProgress() {
     damping: 24,
     restDelta: 0.001,
   });
-  return <motion.div className="scroll-progress" style={{ scaleX }} aria-hidden="true" />;
+  return <m.div className="scroll-progress" style={{ scaleX }} aria-hidden="true" />;
 }

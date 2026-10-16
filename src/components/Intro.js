@@ -1,12 +1,13 @@
 import React from "react";
 import {
-  motion,
+  m,
   useScroll,
   useTransform,
   useReducedMotion,
 } from "framer-motion";
 import "../styles/Intro.css";
 import MagneticButton from "./MagneticButton";
+import ScrambleText from "./ScrambleText";
 import { EASE } from "../animations/variants";
 
 // Lazy-load the animated backdrop so it never blocks first paint.
@@ -18,6 +19,17 @@ const NOW = {
   what: "yesitryme.com",
   href: "https://www.yesitryme.com",
 };
+
+// What I'm learning in AI right now — cycles in the "Learning AI" pill.
+const AI_TOPICS = [
+  "LLM apps",
+  "RAG",
+  "LangChain",
+  "on-device ML",
+  "prompt design",
+  "AI agents",
+];
+const AI_TOPIC_CHARS = Math.max(...AI_TOPICS.map((t) => t.length));
 
 const NAME = "Avishkar";
 
@@ -60,7 +72,7 @@ const kicker = {
 };
 const bodyContainer = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.75 } },
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.35 } },
 };
 const bodyItem = {
   hidden: { opacity: 0, y: 20 },
@@ -70,20 +82,36 @@ const bodyItem = {
 // Hold the reveal until the display font is in, so the giant name never
 // paints in the fallback font and then jumps. Capped so a slow network
 // can't hide the hero.
-function useFontReady(family, timeout = 1000) {
+function useFontReady(family, timeout = 1200) {
   const [ready, setReady] = React.useState(false);
   React.useEffect(() => {
     if (!document.fonts) {
       setReady(true);
       return undefined;
     }
-    let cancelled = false;
-    const done = () => !cancelled && setReady(true);
-    document.fonts.load(`1em "${family}"`).then(done, done);
+    let finished = false;
+    let retry;
+    const done = () => {
+      if (finished) return;
+      finished = true;
+      setReady(true);
+    };
+    // The Google Fonts sheet loads without blocking paint (see index.html).
+    // Until it has applied, the family isn't registered and load() resolves
+    // with no faces — so retry briefly instead of revealing too early.
+    const loadFont = () => {
+      if (finished) return;
+      document.fonts.load(`1em "${family}"`).then(
+        (faces) => (faces.length ? done() : (retry = setTimeout(loadFont, 50))),
+        done
+      );
+    };
+    loadFont();
     const timer = setTimeout(done, timeout);
     return () => {
-      cancelled = true;
+      finished = true;
       clearTimeout(timer);
+      clearTimeout(retry);
     };
   }, [family, timeout]);
   return ready;
@@ -95,13 +123,14 @@ function LocalTime() {
       new Intl.DateTimeFormat("en-GB", {
         hour: "2-digit",
         minute: "2-digit",
+        second: "2-digit",
         timeZone: "Asia/Kolkata",
       }),
     []
   );
   const [now, setNow] = React.useState(() => format.format(new Date()));
   React.useEffect(() => {
-    const id = setInterval(() => setNow(format.format(new Date())), 15000);
+    const id = setInterval(() => setNow(format.format(new Date())), 1000);
     return () => clearInterval(id);
   }, [format]);
   return <time>{now} IST</time>;
@@ -113,14 +142,14 @@ function Letter({ char, index, progress, reduce }) {
   const rotate = useTransform(progress, [0, 1], [0, turn]);
   const kern = KERN[index];
   return (
-    <motion.span
+    <m.span
       className="intro-letter"
       style={reduce ? { marginRight: kern } : { y, rotate, marginRight: kern }}
     >
-      <motion.span className="intro-letter-inner" variants={letterReveal}>
+      <m.span className="intro-letter-inner" variants={letterReveal}>
         {char}
-      </motion.span>
-    </motion.span>
+      </m.span>
+    </m.span>
   );
 }
 
@@ -158,42 +187,62 @@ export default function Intro() {
 
   return (
     <div id="intro" ref={heroRef}>
-      <motion.div
+      <m.div
         className="hero-bg-parallax"
         style={reduce ? undefined : { y: bgY }}
       >
         <React.Suspense fallback={null}>
           <HeroBackground />
         </React.Suspense>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         className="intro-content"
         style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}
       >
-        <motion.div
+        <m.div
           className="intro-topline"
           variants={kicker}
           custom={0}
           initial="hidden"
           animate={state}
         >
-          <a
-            className="intro-badge"
-            href={NOW.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="intro-badge__dot" aria-hidden="true" />
-            {NOW.label} <strong>{NOW.what}</strong>
-            <span aria-hidden="true">↗</span>
-          </a>
+          <div className="intro-pills">
+            <a
+              className="intro-badge"
+              href={NOW.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="intro-badge__dot" aria-hidden="true" />
+              {NOW.label} <strong>{NOW.what}</strong>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <span className="intro-ai">
+              <span className="sr-only">
+                Learning AI: {AI_TOPICS.join(", ")}
+              </span>
+              <span className="intro-ai__spark" aria-hidden="true">
+                ✦
+              </span>
+              <span aria-hidden="true">Learning AI ·</span>
+              {/* Fixed width (mono font) so the cycling word never shifts layout. */}
+              <ScrambleText
+                words={AI_TOPICS}
+                className="intro-ai__topic"
+                aria-hidden="true"
+                style={{
+                  minWidth: `calc(${AI_TOPIC_CHARS}ch + ${AI_TOPIC_CHARS * 0.08}em)`,
+                }}
+              />
+            </span>
+          </div>
           <span className="intro-meta">
             Pune, India <span aria-hidden="true">·</span> <LocalTime />
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           className="intro-title"
           variants={titleContainer}
           initial="hidden"
@@ -202,15 +251,15 @@ export default function Intro() {
         >
           {/* Shrink-wraps the name so "here." ends where the name ends. */}
           <span className="intro-title-inner">
-            <motion.span
+            <m.span
               className="intro-kicker"
               variants={kicker}
               custom={0}
               aria-hidden="true"
             >
               hi,
-            </motion.span>
-            <motion.span
+            </m.span>
+            <m.span
               className="intro-name"
               variants={nameContainer}
               aria-hidden="true"
@@ -224,38 +273,38 @@ export default function Intro() {
                   reduce={reduce}
                 />
               ))}
-            </motion.span>
-            <motion.span
+            </m.span>
+            <m.span
               className="intro-kicker intro-kicker--end"
               variants={kicker}
               custom={0.55}
               aria-hidden="true"
             >
               here.
-            </motion.span>
+            </m.span>
           </span>
-        </motion.h1>
+        </m.h1>
 
-        <motion.div
+        <m.div
           className="intro-bottom"
           variants={bodyContainer}
           initial="hidden"
           animate={state}
         >
           <div className="intro-copy">
-            <motion.p className="intro-subtitle" variants={bodyItem}>
+            <m.p className="intro-subtitle" variants={bodyItem}>
               I create stuff sometimes.
-            </motion.p>
-            <motion.p className="intro-desc" variants={bodyItem}>
+            </m.p>
+            <m.p className="intro-desc" variants={bodyItem}>
               I'm a software engineer from Pune, India. As a Full Stack Web
               Developer, I am driven by a passion for innovation and a keen eye
               for detail. With a solid foundation in both frontend and backend
               development, I bring a holistic approach to every project,
               seamlessly integrating design and functionality to create
               immersive digital experiences.
-            </motion.p>
+            </m.p>
           </div>
-          <motion.div className="intro-cta-row" variants={bodyItem}>
+          <m.div className="intro-cta-row" variants={bodyItem}>
             <MagneticButton
               href="#contact"
               className="intro-contact"
@@ -263,9 +312,9 @@ export default function Intro() {
               Say hi!
               <ArrowIcon />
             </MagneticButton>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
     </div>
   );
 }

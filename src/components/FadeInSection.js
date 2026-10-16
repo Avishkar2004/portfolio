@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { EASE, viewportOnce } from "../animations/variants";
 
 // Parses the legacy delay prop ("100ms", "200ms", 0.3) into seconds.
@@ -19,7 +19,7 @@ function parseDelay(delay) {
  */
 export default function FadeInSection({ children, delay, className }) {
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -27,6 +27,6 @@ export default function FadeInSection({ children, delay, className }) {
       transition={{ duration: 0.6, ease: EASE, delay: parseDelay(delay) }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

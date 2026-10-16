@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import OpenInBrowserIcon from "@material-ui/icons/OpenInBrowser";
-import HistoryIcon from "@material-ui/icons/History";
+import { GitHubIcon, OpenInBrowserIcon, HistoryIcon } from "./Icons";
 
 class ExternalLinks extends React.Component {
   render() {
@@ -24,7 +22,6 @@ class ExternalLinks extends React.Component {
             <GitHubIcon
               style={{
                 fontSize: 20,
-                color: "var(--text)",
               }}
             />
           </a>
@@ -38,7 +35,6 @@ class ExternalLinks extends React.Component {
             <HistoryIcon
               style={{
                 fontSize: 22,
-                color: "var(--text)",
               }}
             />
           </Link>
@@ -54,7 +50,6 @@ class ExternalLinks extends React.Component {
             <OpenInBrowserIcon
               style={{
                 fontSize: 25,
-                color: "var(--text)",
               }}
             />
           </a>

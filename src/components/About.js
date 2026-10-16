@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from "./SectionHeader";
 import "../styles/About.css";
 import FadeInSection from "./FadeInSection";
 
@@ -18,10 +19,7 @@ export default function About() {
   return (
     <div id="about">
       <FadeInSection>
-        <div className="section-header">
-          <span className="section-index">01</span>
-          <h2 className="section-title">About me</h2>
-        </div>
+        <SectionHeader index="01" title="About me" />
         <div className="about-content">
           <div className="about-description">
             <p>

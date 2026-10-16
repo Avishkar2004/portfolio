@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  motion,
+  m,
   useMotionValue,
   useSpring,
   useTransform,
@@ -73,11 +73,11 @@ export default function HeroBackground() {
       <div className="hero-bg__grid" />
       {lampOn && (
         <>
-          <motion.div
+          <m.div
             className="hero-bg__glow"
             style={{ x: glowX, y: glowY, width: GLOW_SIZE, height: GLOW_SIZE }}
           />
-          <motion.div
+          <m.div
             className="hero-bg__grid hero-bg__grid--lit"
             style={{ maskImage: litMask, WebkitMaskImage: litMask }}
           />

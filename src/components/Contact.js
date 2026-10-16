@@ -1,5 +1,6 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import SectionHeader from "./SectionHeader";
+import { m, AnimatePresence } from "framer-motion";
 import "../styles/Contact.css";
 import {
   EASE,
@@ -166,7 +167,7 @@ function ContactForm() {
         <div aria-live="polite">
           <AnimatePresence mode="wait">
             {status !== "idle" && !sending && (
-              <motion.p
+              <m.p
                 key={status}
                 className={`contact-status is-${status}`}
                 initial={{ opacity: 0, y: 6 }}
@@ -175,7 +176,7 @@ function ContactForm() {
                 transition={{ duration: 0.3, ease: EASE }}
               >
                 {STATUS_TEXT[status]}
-              </motion.p>
+              </m.p>
             )}
           </AnimatePresence>
         </div>
@@ -187,23 +188,20 @@ function ContactForm() {
 export default function Contact() {
   return (
     <div id="contact">
-      <div className="section-header">
-        <span className="section-index">05</span>
-        <h2 className="section-title">Contact</h2>
-      </div>
+      <SectionHeader index="05" title="Contact" />
 
-      <motion.div
+      <m.div
         variants={staggerContainer(0.1)}
         initial="hidden"
         whileInView="visible"
         viewport={viewportOnce}
       >
-        <motion.p className="contact-headline" variants={fadeUp}>
+        <m.p className="contact-headline" variants={fadeUp}>
           Let's build something <em>together.</em>
-        </motion.p>
+        </m.p>
 
         <div className="contact-grid">
-          <motion.div className="contact-aside" variants={fadeUp}>
+          <m.div className="contact-aside" variants={fadeUp}>
             <div>
               <p className="contact-label">Email</p>
               <CopyEmail />
@@ -224,13 +222,13 @@ export default function Contact() {
               <p className="contact-label">Based in</p>
               <p className="contact-note">Pune, India (IST)</p>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div variants={fadeUp}>
+          <m.div variants={fadeUp}>
             <ContactForm />
-          </motion.div>
+          </m.div>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

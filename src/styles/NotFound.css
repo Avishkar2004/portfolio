@@ -1,0 +1,89 @@
+.notfound {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--space-2xl) var(--gutter);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center;
+}
+
+.notfound__inner {
+  max-width: 44rem;
+  padding: var(--space-l);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+}
+
+.notfound__label {
+  margin: 0 0 var(--space-s);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.notfound__path {
+  text-transform: none;
+  color: var(--accent-text);
+  overflow-wrap: anywhere;
+}
+
+.notfound__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-6);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+}
+.notfound__title em {
+  color: var(--accent);
+}
+
+.notfound__text {
+  max-width: 30em;
+  margin: var(--space-m) 0 var(--space-l);
+  line-height: var(--leading-body);
+  color: var(--text-muted);
+}
+
+.notfound__home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-s) var(--space-l);
+  border-radius: var(--radius-pill);
+  background: var(--text);
+  color: var(--bg) !important;
+  font-weight: 500;
+  transition: background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+.notfound__home:hover {
+  background: var(--accent);
+  color: var(--accent-contrast) !important;
+}
+.notfound__home svg {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.notfound__home:hover svg {
+  transform: translateX(4px);
+}
+
+@media only screen and (max-width: 600px) {
+  /* .App already pads the page on phones, so fill its content box instead
+     of the full viewport. */
+  .notfound {
+    width: 100%;
+    padding: var(--space-l) 0;
+  }
+  .notfound__inner {
+    padding: var(--space-m);
+  }
+}

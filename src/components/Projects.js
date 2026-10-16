@@ -1,6 +1,7 @@
 import React from "react";
+import SectionHeader from "./SectionHeader";
 import {
-  motion,
+  m,
   AnimatePresence,
   useMotionValue,
   useMotionTemplate,
@@ -96,7 +97,7 @@ function FeatureCard({ name, project, index }) {
   };
 
   return (
-    <motion.li
+    <m.li
       ref={ref}
       className="feature-card"
       variants={fadeUp}
@@ -109,7 +110,7 @@ function FeatureCard({ name, project, index }) {
       }
     >
       {!reduce && (
-        <motion.div
+        <m.div
           className="card-spotlight"
           aria-hidden="true"
           style={{ background: spotlight }}
@@ -123,7 +124,7 @@ function FeatureCard({ name, project, index }) {
       <p className="feature-card__desc">{project["desc"]}</p>
       <TechChips items={techList(project)} />
       {updated && <span className="project-updated">Updated {updated}</span>}
-    </motion.li>
+    </m.li>
   );
 }
 
@@ -134,7 +135,7 @@ function IndexRow({ name, project, index, open, onToggle }) {
   const more = tech.length - PREVIEW_TECH;
 
   return (
-    <motion.li className={`index-row${open ? " is-open" : ""}`} variants={fadeUp}>
+    <m.li className={`index-row${open ? " is-open" : ""}`} variants={fadeUp}>
       <button
         type="button"
         className="index-row__head"
@@ -152,7 +153,7 @@ function IndexRow({ name, project, index, open, onToggle }) {
       </button>
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <m.div
             id={panelId}
             className="index-row__panel"
             initial={{ height: 0, opacity: 0 }}
@@ -170,10 +171,10 @@ function IndexRow({ name, project, index, open, onToggle }) {
                 <Links name={name} project={project} />
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.li>
+    </m.li>
   );
 }
 
@@ -185,12 +186,9 @@ export default function Projects() {
 
   return (
     <div id="projects">
-      <div className="section-header">
-        <span className="section-index">02</span>
-        <h2 className="section-title">Selected work</h2>
-      </div>
+      <SectionHeader index="02" title="Selected work" />
 
-      <motion.ul
+      <m.ul
         className="feature-grid"
         variants={staggerContainer(0.12)}
         initial="hidden"
@@ -200,9 +198,9 @@ export default function Projects() {
         {featured.map(([name, project], i) => (
           <FeatureCard key={name} name={name} project={project} index={i} />
         ))}
-      </motion.ul>
+      </m.ul>
 
-      <motion.ul
+      <m.ul
         className="project-index-list"
         variants={staggerContainer(0.05)}
         initial="hidden"
@@ -221,7 +219,7 @@ export default function Projects() {
             }
           />
         ))}
-      </motion.ul>
+      </m.ul>
     </div>
   );
 }

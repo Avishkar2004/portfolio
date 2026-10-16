@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
+import { m, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import { fadeUp, viewportOnce } from "../animations/variants";
 
 const experienceItems = {
@@ -43,14 +43,14 @@ const JobList = () => {
   return (
     <div className="timeline" ref={ref}>
       <div className="timeline__rail" aria-hidden="true">
-        <motion.div
+        <m.div
           className="timeline__progress"
           style={{ scaleY: reduce ? 1 : progress }}
         />
       </div>
       <ol className="timeline__list">
         {Object.entries(experienceItems).map(([company, job]) => (
-          <motion.li
+          <m.li
             className="timeline__item"
             key={company}
             variants={fadeUp}
@@ -69,7 +69,7 @@ const JobList = () => {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </motion.li>
+          </m.li>
         ))}
       </ol>
     </div>

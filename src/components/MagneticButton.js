@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
+import { m, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 import { SPRING } from "../animations/variants";
 
 /**
@@ -37,7 +37,7 @@ export default function MagneticButton({
     y.set(0);
   };
 
-  const Comp = motion[as] || motion.a;
+  const Comp = m[as] || m.a;
 
   return (
     <Comp

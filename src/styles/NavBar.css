@@ -36,6 +36,7 @@
 }
 
 .site-nav__links {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -58,14 +59,22 @@
   color: var(--accent-text) !important;
 }
 
+/* Width + x are set inline from the active link (NavBar.js useUnderline). */
 .site-nav__underline {
   position: absolute;
-  left: 10px;
-  right: 10px;
+  left: 0;
   bottom: 0;
   height: 2px;
   border-radius: 2px;
   background: var(--accent);
+  pointer-events: none;
+  transition: transform 0.45s var(--ease-out), width 0.45s var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav__underline {
+    transition: none;
+  }
 }
 
 .site-nav__socials {

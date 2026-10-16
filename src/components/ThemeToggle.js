@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { EASE } from "../animations/variants";
 
 const iconProps = {
@@ -78,7 +78,7 @@ export default function ThemeToggle() {
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >
       <AnimatePresence mode="wait" initial={false}>
-        <motion.span
+        <m.span
           key={theme}
           style={{ display: "inline-flex" }}
           initial={{ y: -18, opacity: 0, rotate: -90 }}
@@ -87,7 +87,7 @@ export default function ThemeToggle() {
           transition={{ duration: 0.25, ease: EASE }}
         >
           {isDark ? <MoonIcon /> : <SunIcon />}
-        </motion.span>
+        </m.span>
       </AnimatePresence>
     </button>
   );

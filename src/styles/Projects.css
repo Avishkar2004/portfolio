@@ -164,6 +164,7 @@
   position: relative;
 }
 .index-row__head:hover::before,
+.index-row__head:focus-visible::before,
 .index-row.is-open .index-row__head::before {
   transform: scaleY(1);
 }
@@ -175,7 +176,8 @@
   transition: transform var(--duration-base) var(--ease-out),
     color var(--duration-fast) ease;
 }
-.index-row__head:hover .index-row__name {
+.index-row__head:hover .index-row__name,
+.index-row__head:focus-visible .index-row__name {
   transform: translateX(8px);
 }
 .index-row.is-open .index-row__name {
@@ -243,6 +245,17 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
+}
+.external-links a {
+  display: inline-flex;
+  color: var(--text) !important;
+  transition: color var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-out);
+}
+.external-links a:hover,
+.external-links a:focus-visible {
+  color: var(--accent-text) !important;
+  transform: translateY(-2px);
 }
 
 .github-icon {

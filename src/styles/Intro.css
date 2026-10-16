@@ -98,6 +98,40 @@
   }
 }
 
+.intro-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* "Learning AI" pill: accent-tinted, with a slowly turning spark. */
+.intro-ai {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 7px 14px 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.intro-ai__spark {
+  display: inline-block;
+  color: var(--accent);
+  animation: intro-spark 6s linear infinite;
+}
+.intro-ai__topic {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--text);
+}
+@keyframes intro-spark {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ---- The name ------------------------------------------------------------ */
 
 .intro-title {
@@ -209,7 +243,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-badge__dot::after {
+  .intro-badge__dot::after,
+  .intro-ai__spark {
     animation: none;
   }
 }
@@ -232,5 +267,10 @@
 
   .intro-topline {
     letter-spacing: 0.02em;
+  }
+
+  /* The extra AI pill row needs the room; location is in Contact too. */
+  .intro-meta {
+    display: none;
   }
 }
