@@ -18,10 +18,9 @@
   border-bottom-color: var(--line);
 }
 
+/* Full width so the brand lines up with the edge-to-edge hero name. */
 .site-nav__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: var(--space-s) 28px;
+  padding: var(--space-s) var(--gutter);
   display: flex;
   align-items: center;
   gap: 20px;

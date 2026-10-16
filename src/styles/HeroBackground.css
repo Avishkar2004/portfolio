@@ -6,95 +6,72 @@
   z-index: 0;
 }
 
-/* Faint moving grid for a touch of depth. */
+/* Graph paper. The lit copy below must keep the same size + origin so its
+   lines sit exactly on top of these. */
 .hero-bg__grid {
   position: absolute;
-  inset: -50%;
+  inset: 0;
   background-image: linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 46px 46px;
-  opacity: 0.5;
-  mask-image: radial-gradient(circle at 50% 40%, black, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle at 50% 40%, black, transparent 70%);
-  animation: hero-grid-drift 40s linear infinite;
-  will-change: transform;
+  background-size: 56px 56px;
+  background-position: center;
+  opacity: 0.7;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 25%, transparent 75%);
 }
 
-/* Soft drifting colour blobs. */
-.hero-bg__blob {
+/* Grid lines under the cursor, in the accent colour. Its mask is set inline. */
+.hero-bg__grid--lit {
+  background-image: linear-gradient(var(--accent) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+  opacity: 0.5;
+}
+
+/* Warm glow trailing the cursor (size + position set inline). */
+.hero-bg__glow {
   position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.5;
+  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
   will-change: transform;
 }
 
-.hero-bg__blob--1 {
-  width: 460px;
-  height: 460px;
-  top: -120px;
-  left: -80px;
-  background: radial-gradient(circle, var(--accent-glow), transparent 65%);
-  animation: hero-blob-1 22s ease-in-out infinite;
+/* One slow glow so the hero isn't flat on touch screens. */
+.hero-bg__ambient {
+  position: absolute;
+  top: -30vmax;
+  right: -25vmax;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-soft), transparent 60%);
+  animation: hero-ambient 24s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-.hero-bg__blob--2 {
-  width: 540px;
-  height: 540px;
-  top: 10%;
-  right: -140px;
-  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
-  animation: hero-blob-2 28s ease-in-out infinite;
-}
-
-.hero-bg__blob--3 {
-  width: 420px;
-  height: 420px;
-  bottom: -120px;
-  left: 30%;
-  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
-  animation: hero-blob-3 32s ease-in-out infinite;
-}
-
-/* Fades the backdrop into the page at the edges so text stays readable. */
+/* Fades everything into the page colour at the edges. */
 .hero-bg__vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse at 50% 45%,
-    transparent 30%,
-    var(--bg) 95%
+    transparent 45%,
+    var(--bg) 100%
   );
 }
 
-@keyframes hero-blob-1 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(60px, 50px, 0) scale(1.12); }
-}
-@keyframes hero-blob-2 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-70px, 40px, 0) scale(1.1); }
-}
-@keyframes hero-blob-3 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(40px, -60px, 0) scale(0.9); }
-}
-@keyframes hero-grid-drift {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(46px, 46px, 0); }
+@keyframes hero-ambient {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-12vmax, 10vmax, 0) scale(1.1);
+  }
 }
 
-@media only screen and (max-width: 600px) {
-  .hero-bg__blob { filter: blur(50px); opacity: 0.4; }
-  .hero-bg__blob--1 { width: 300px; height: 300px; }
-  .hero-bg__blob--2 { width: 340px; height: 340px; }
-  .hero-bg__blob--3 { width: 280px; height: 280px; }
-}
-
-/* Respect reduced motion: keep the look, drop the movement. */
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg__grid,
-  .hero-bg__blob {
+  .hero-bg__ambient {
     animation: none;
   }
 }
