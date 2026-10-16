@@ -51,6 +51,11 @@ export const wordReveal = {
 // Shared viewport config for whileInView reveals.
 export const viewportOnce = { once: true, amount: 0.2 };
 
+// For very tall containers (e.g. the project grid stacked on a phone), where
+// 20% of the element can never be on screen at once: fire as soon as its top
+// is a little way into the viewport.
+export const viewportOnceTall = { once: true, margin: "0px 0px -15% 0px" };
+
 // Page transition used with AnimatePresence between routes.
 export const pageTransition = {
   initial: { opacity: 0, y: 12 },

@@ -12,7 +12,7 @@ import {
 import "../styles/Projects.css";
 import FolderOpenRoundedIcon from "@material-ui/icons/FolderOpenRounded";
 import ExternalLinks from "./ExternalLinks";
-import { fadeUp, staggerContainer, viewportOnce, SPRING } from "../animations/variants";
+import { fadeUp, staggerContainer, viewportOnceTall, SPRING } from "../animations/variants";
 import projects from "../data/projects.json";
 import projectCommits from "../data/project-commits.json";
 
@@ -110,7 +110,7 @@ export default function Projects() {
           variants={staggerContainer(0.1)}
           initial="hidden"
           whileInView="visible"
-          viewport={viewportOnce}
+          viewport={viewportOnceTall}
           style={reduce ? undefined : { skewY }}
         >
           {Object.keys(projects).map((key) => (
