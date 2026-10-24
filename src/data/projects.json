@@ -70,6 +70,12 @@
     "GithubRepository": "https://github.com/Avishkar2004/deploy_Facilink",
     "domain": "https://facilink.in"
   },
+   "Tweet Log": {
+    "desc": "A fast, searchable fan archive of 1,875 of Kanye West's posts on X (2013–2022). Live search updates on every keystroke with filters for year, date range and topic, plus a month-by-month timeline and a stats page with interactive SVG charts. Every like count and timestamp is real, and deleted posts are clearly marked. Unofficial fan project.",
+    "techStack": "Vite, Tailwind CSS, JavaScript, Node.js, SVG Charts, Accessibility (WCAG AA)",
+    "GithubRepository": "https://github.com/Avishkar2004/kanye-tweet-archive",
+    "domain": "https://github.com/Avishkar2004/kanye-tweet-archive"
+  },
   "Greenyogagro": {
     "desc": "A responsive website for a green yoga and agriculture brand, designed for seamless performance across devices using WordPress.",
     "techStack": "WordPress, PHP, MySQL, HTML5, CSS3, JavaScript",

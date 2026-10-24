@@ -23,7 +23,10 @@ export default function About() {
         <div className="about-content">
           <div className="about-description">
             <p>
-              I worked as a <b>Full Stack Developer (Intern)</b> at{" "}
+              Since <b>Aug 2025</b>, I've been working remotely as a{" "}
+              <b>Full Stack Developer (Intern)</b> at{" "}
+              <a href="https://www.yesitryme.com">YesITryMe Marketing LLP</a>.
+              Before that, I was a Full Stack Developer (Intern) at{" "}
               <a href="https://techstarsolution-77061.web.app/">
                 Techstar Solution Pvt Ltd
               </a>{" "}

@@ -4,7 +4,7 @@ import { fadeUp, viewportOnce } from "../animations/variants";
 
 const experienceItems = {
   "YesITryMe Marketing LLP": {
-    jobTitle: "Full Stack Developer @",
+    jobTitle: "Full Stack Developer Intern @",
     duration: "AUG 2025 - PRESENT · Remote",
     desc: [
       "Owned end-to-end development of a production platform, translating business requirements into scalable technical solutions and release-ready features.",
